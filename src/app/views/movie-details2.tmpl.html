@@ -1,0 +1,70 @@
+<div class="col-xs-12 admin-movie-details">
+    <div class="row">
+        <div class="col-xs-9">
+            <h3>{{movieVm.movieDetails.title}} ({{movieVm.movieDetails.myear}})</h3>
+        </div>
+        <div class="col-xs-3">
+            <h3><i class="glyphicon glyphicon-eye-open"></i>
+                <i class="glyphicon glyphicon-trash"></i>
+                <i class="glyphicon glyphicon-edit"></i></h3>
+        </div>
+        <div class="col-xs-12">
+            MID: <strong>{{movieVm.movieDetails.mid}}</strong>
+
+        </div>
+        <div class="col-xs-12 admin-movie-details-plot-poster">
+            <div class="col-xs-8">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>Plot:{{movieVm.movieDetails.plot}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">Type:
+                        <br><strong>{{movieVm.movieDetails.mtype}}</strong></div>
+                    <div class="col-xs-6">Rated:
+                        <br><strong>{{movieVm.movieDetails.rated}}</strong></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">Released:
+                        <br><strong>{{movieVm.movieDetails.released | date}}</strong></div>
+                    <div class="col-xs-6">Runtime:
+                        <br><strong>{{movieVm.movieDetails.runtime}} mins</strong></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">Metascore:
+                        <br><strong>{{movieVm.movieDetails.metascore}}</strong>/100
+                    </div>
+                    <div class="col-xs-6">IMDB:
+                        <br><strong>{{movieVm.movieDetails.imdbRating}}</strong>/10 ({{movieVm.movieDetails.imdbVotes}})
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">Language:
+                        <br><strong>{{movieVm.movieDetails.lang}}</strong></div>
+                    <div class="col-xs-6">Country:
+                        <br><strong>{{movieVm.movieDetails.country}}</strong></div>
+                </div>
+
+            </div>
+            <div class="col-xs-4 admin-movie-details-poster">
+                <img class="movie-poster img-responsive thumbnail"
+                     ng-src="{{movieVm.movieDetails.poster}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">Genre:
+            <strong>{{movieVm.movieDetails.genre}}</strong></div>
+        <div class="col-xs-12">Director:
+            <strong>{{movieVm.movieDetails.director}}</strong></div>
+        <div class="col-xs-12">Actors:
+            <strong>{{movieVm.movieDetails.actors}}</strong></div>
+        <div class="col-xs-12">Writer:
+            <strong>{{movieVm.movieDetails.writer}}</strong>
+        </div>
+        <div class="col-xs-12">Awards:
+            <strong>{{movieVm.movieDetails.awards}}</strong></div>
+
+    </div>
+</div>

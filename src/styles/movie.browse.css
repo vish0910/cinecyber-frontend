@@ -1,0 +1,22 @@
+/* Styles go here */
+
+.thumbnail-clicked {
+    box-shadow: 0px 0px 5px gray;
+}
+
+.movie-list-poster {
+    /*Reduce height if the col-lg-6 of list is increased*/
+    height: 200px;
+}
+
+.movie-list-details {}
+
+
+/*---ANGULAR UI BOOTSTRAP--*/
+
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+    cursor: pointer;
+}

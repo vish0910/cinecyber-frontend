@@ -1,0 +1,29 @@
+<div class = "admin-movie-table">
+<table class="table table-striped table-hover ">
+    <thead>
+    <tr>
+        <th>Sr. No.</th>
+        <th>Thumbnail</th>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Type</th>
+        <th>Rated</th>
+        <th>IMDB</th>
+        <th>released</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="movie in movieVm.movies" ng-click="movieVm.showDetails($index)">
+        <td>{{$index+1}}</td>
+        <td><img ng-src="{{movie.poster}}" class = "list-row-thumbnail" ></td>
+        <td class = "list-row-title">{{movie.title}}</td>
+        <td>{{movie.myear}}</td>
+        <td>{{movie.mtype}}</td>
+        <td>{{movie.rated}}</td>
+        <td>{{movie.imdbRating}}</td>
+        <td>{{movie.released | date}}</td>
+
+    </tr>
+    </tbody>
+</table>
+</div>

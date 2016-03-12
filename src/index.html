@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic'
+          rel='stylesheet' type='text/css'>
+    <!-- bower:css -->
+    <!-- endinject -->
+    <!-- vendor.min:css -->
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- app.min:css -->
+    <!-- endinject -->
+</head>
+
+<body ng-app="app">
+<header>
+    <div ng-include="'app/views/nav-bar.tmpl.html'"></div>
+</header>
+<section ng-view>
+    <!--<div ng-controller="MovieBrowseController as browseVm" class="container-fluid">-->
+        <!--&lt;!&ndash;<div class="col-xs-12" ng-include="'app/views/movie.admin.tmpl.html'"></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="col-xs-12" ng-include="'app/views/movie.stream.tmpl.html'"></div>&ndash;&gt;-->
+        <!--<div class="col-xs-12" ng-include="'app/views/movie.browse.tmpl.html'"></div>-->
+    <!--</div>-->
+
+
+</section>
+<footer>
+    <div class='col-xs-12 footer-holder'></div>
+    <div ng-include="'app/views/footer.tmpl.html'"></div>
+</footer>
+
+<!-- bower:js -->
+<!-- endinject -->
+<!-- vendor.min:js -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<!-- endinject -->
+<!-- app.min:js -->
+<!-- endinject -->
+</body>
+
+</html>

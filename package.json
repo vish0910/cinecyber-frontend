@@ -1,0 +1,25 @@
+{
+  "name": "ui-cinecyber",
+  "version": "1.0.0",
+  "description": "Front End for CineCyber: A movie streaming website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://vish0910@bitbucket.org/vish0910/cinecyber-frontend.git"
+  },
+  "author": "Vishal Doshi",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/vish0910/cinecyber-frontend#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.3",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-uglify": "^1.5.3",
+    "main-bower-files": "^2.11.1",
+    "merge-stream": "^1.0.0"
+  }
+}

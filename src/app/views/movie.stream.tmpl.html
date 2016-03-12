@@ -1,0 +1,77 @@
+<div class="background-image"  back-image="{{streamVm.movie.poster}}" ></div>
+<div class="background-gradient"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 movie-poster-container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img class="movie-poster img-responsive" ng-src="{{streamVm.movie.poster}}">
+                    <!--<img class="movie-poster img-responsive"-->
+                    <!--src="http://ia.media-imdb.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg">-->
+                    <!-- <img class="movie-poster img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjE0NTA2MTEwOV5BMl5BanBnXkFtZTgwNzg4NzU2NjE@._V1_SX300.jpg"> -->
+                    <!-- <img class="movie-poster img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_SX300.jpg" /> -->
+                </div>
+                <div class="col-xs-12 text-center">
+                    <button type="submit" id="playMovieButton" class="btn btn-primary btn-lg btn-block movie-play-btn">
+                        Play Movie
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <span></span>
+            <h2 class="text-uppercase movie-title">{{streamVm.movie.title}}<span class="movie-year">({{streamVm.movie.myear}})</span>
+            </h2>
+            <div class="row">
+                <div class="col-xs-12 jumbotron  movie-plot">
+                    <h3 class="text-uppercase">Plot</h3>
+                    <p>{{streamVm.movie.plot}}</p>
+                    <p>Metascore: <strong>{{streamVm.movie.metascore}}</strong> &nbsp;&nbsp;&nbsp; IMDB: <strong>{{streamVm.movie.imdbRating}}</strong>
+                        ({{streamVm.movie.imdbVotes}} votes)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 movie-moreinfo jumbotron">
+                    <h3 class="text-uppercase">More Info</h3>
+                    <div class="container movie-moreinfo-card">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3 col-md-3">Type:
+                                <br><strong>{{streamVm.movie.mtype}}</strong></div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">Rated:
+                                <br><strong>{{streamVm.movie.rated}}</strong></div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">Released:
+                                <br><strong>{{streamVm.movie.released|date}}</strong></div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">Runtime:
+                                <br><strong>{{streamVm.movie.runtime}} mins</strong></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 movie-moreinfo-genre-director">
+                                <div class="col-xs-8 col-sm-12 col-md-12 col-lg-7">Genre:
+                                    <br><strong>{{streamVm.movie.genre}}</strong></div>
+                                <div class="col-xs-4 col-sm-12 col-md-12 col-lg-5">Director:
+                                    <br><strong>{{streamVm.movie.director}}</strong></div>
+                            </div>
+                            <!--<div class = "col-xs-6 col-sm-2 col-md-3">Genre:<br>Action, Adventure, Fantasy</div>
+                            <div class = "col-xs-6 col-sm-2 col-md-3">Director:<br>J.J. Abrams</div> -->
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Actors:
+                                <br><strong>{{streamVm.movie.actors}}</strong></div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">Writer:
+                                <br><strong>{{streamVm.movie.writer}}</strong></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-4 col-md-3">Language:
+                                <br><strong>{{streamVm.movie.lang}}</strong></div>
+                            <div class="col-xs-6 col-sm-4 col-md-3">Country:
+                                <br><strong>{{streamVm.movie.country}}</strong></div>
+                            <div class="col-xs-12 col-sm-4 col-md-6">Awards:
+                                <br><strong>{{streamVm.movie.awards}}</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-include="'/app/views/movie.stream.comments.html'" class="col-xs-12"></div>
+    </div>
+</div>

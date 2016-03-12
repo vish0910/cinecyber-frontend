@@ -1,0 +1,18 @@
+<div class = "col-xs-10 col-xs-offset-1">
+<table class="table comments-row">
+    <thead>
+    <th>Sr. No.</th>
+    <th>Thumbnail</th>
+    <th>Comment</th>
+    <th>Rating</th>
+    </thead>
+    <tbody>
+    <tr ng-repeat="comment in movieVm.movies">
+        <td>{{$index+1}}</td>
+        <td><img ng-src="{{comment.poster}}" class = "comments-user-thumbnail" ></td>
+        <td>{{comment.plot}}</td>
+        <td>{{comment.imdbRating}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>

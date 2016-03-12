@@ -1,0 +1,13 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 50px; /* For Navbar on top */
+}
+
+.template-wrapper{
+    padding-top:10px;
+}
+
+.headP{
+    color:#122b40;
+}
