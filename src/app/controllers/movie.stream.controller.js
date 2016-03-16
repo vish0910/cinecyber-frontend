@@ -56,7 +56,7 @@
             if (AuthService.isAuthed()) {
                 var uid = AuthService.getUserId();
 
-                CommentService.createComment(streamVm.newComment,streamVm.mid, uid)
+                CommentService.createComment(streamVm.newComment, streamVm.mid, uid)
                     .then(function (data) {
                         streamVm.newComment = null;
                         return CommentService.getCommentsByMid(streamVm.mid);
@@ -67,13 +67,30 @@
                     .catch(function (error) {
                         console.log(error);
                     });
-
-
             }
-
         }
 
+        //Create Rating
+        streamVm.createComment = function () {
+            console.log("Rating Accessed!");
+            if (AuthService.isAuthed()) {
+                var uid = AuthService.getUserId();
+
+                RatingService.createRating(streamVm.newRating, streamVm.mid, uid)
+                    .then(function (data) {
+                        streamVm.newRating = null;
+                        return RatingService.getRatingByMid(streamVm.mid);
+                    })
+                    .then(function (data) {
+                        streamVm.ratings = data;
+                        streamVm.avgRating = 
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
+        }
+
+
     }
-
-
 })();
