@@ -59,8 +59,10 @@
                     console.log("Registration Successful!"+data);
                     userVm.statusMessage = "Registration Successful!";
                     userVm.userDetails = data;
+                    userVm.newUser=null;
                     $window.location.href = '#/user/login';
                 }, function (error) {
+                    userVm.message = "User Account already exists!";
                     console.log(error);
                 });
         }

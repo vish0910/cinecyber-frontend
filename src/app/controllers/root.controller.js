@@ -15,7 +15,7 @@
                     if (next.access != undefined && !next.access.allowAnonymous && !AuthService.isAuthed()) {
                         $location.path("#/user/login");
                     }
-                    else if (next.access != undefined && !next.access.allowUser  && !AuthService.isAdmin()) {
+                    else if (next.access != undefined && !next.access.allowUser  && !AuthService.isAdmin() && AuthService.isAuthed()) {
                         $location.path("#/user/profile");
                     }
                 });
@@ -34,7 +34,7 @@
                             if (!window.routes[i].access.allowAnonymous && !AuthService.isAuthed()) {
                                 console.log("error You are not logged in!");
                                 $location.path("#/user/login");
-                            } else if (!window.routes[i].access.allowUser && !AuthService.isAdmin()) {
+                            } else if (!window.routes[i].access.allowUser && !AuthService.isAdmin() && AuthService.isAuthed()) {
                                 console.log("error You are not Admin!");
                                 $location.path("#/user/profile");
                             }

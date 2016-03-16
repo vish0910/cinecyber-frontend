@@ -1,12 +1,11 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-4 col-md-3">
-    <img ng-src="{{movie.poster}}" class="img-responsive movie-list-poster center-block" alt="Poster Not found"></div>
+    <div class="col-xs-3">
+        <img ng-src="{{comment.poster}}" class="img-responsive comments-user-thumbnail" alt="Poster Not found"></div>
 
-  <div class="col-xs-12 col-sm-8 col-md-9">
-    <div class="">
-      <h3>{{movie.title}}({{movie.myear}})</h3>
-      <p>{{movie.plot}}</p>
-      <p><a ng-init="movie.imdbUrl= 'http://www.imdb.com/title/'+ movie.imdbID;" ng-href="{{movie.imdbUrl}}" role="button" target="_blank"><button ng-click = '$event.stopPropagation()' class="btn btn-primary" role="button">IMDB:{{movie.imdbRating}}</button></a> <a href="#" class="btn btn-default" role="button">Metascore:{{movie.metascore}}</a></p>
+    <div class="col-xs-9">
+        <div class="row">
+            <div class="col-xs-12">{{comment.userid}}{{comment.timestamp}}</div>
+            <div class="col-xs-12">{{comment.ucomment}}</div>
+        </div>
     </div>
-  </div>
 </div>

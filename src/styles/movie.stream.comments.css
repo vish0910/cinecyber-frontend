@@ -1,5 +1,8 @@
 .comment-row{
-    background: whitesmoke;
+    background: rgba(0,0,0,0.5);
+    border-top: 1px solid #5e5e5e;
+    border-left: 1px solid #5e5e5e;
+    border-right: 1px solid #5e5e5e;
 }
 
 .comment-hover{
@@ -13,4 +16,23 @@
     box-shadow: 0px 0px 10px #1b6d85;
     border: 1px solid black;
     border-radius: 40px;
+}
+
+.comment-text-container{
+    padding: 10px;
+    border: 1px solid silver;
+}
+
+.comment-text-container .comment-text-area{
+    resize: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    height: 100%;
+    margin: -10px;
+}
+
+.comment-text-container .comment-send-button{
+    height: 50px;
 }
