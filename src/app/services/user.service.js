@@ -36,7 +36,7 @@
         }
 
         function getUserById(uid) {
-            return $http.get(CONFIG.API_END_POINT + '/api/users/' + uid)
+            return $http.get(CONFIG.API_END_POINT + '/users/' + uid)
                 .then(successFn, errorFn);
         }
 
@@ -57,6 +57,7 @@
             if (token) {
                 console.log('JWT:', token);
                 AuthService.saveJwt(token);
+                self.loggingInAs =
                 AuthService.setUser(self.loggingInAs);
             }
 

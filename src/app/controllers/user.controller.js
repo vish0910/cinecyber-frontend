@@ -7,6 +7,8 @@
     function UserController($window,UserService, AuthService) {
         var userVm = this;
 
+        userVm.user = AuthService.user;
+
         userVm.createUser = createUser;
         userVm.loginUser = loginUser;
         //userVm.getUsers = getUsers;
@@ -22,9 +24,21 @@
             UserService.loginUser(userVm.userCredentials)
                 .then(function (data) {
                     console.log("Login Successful!"+data);
+
+                    var token = data.token;
+                    if (token) {
+                        console.log('JWT:', token);
+                        AuthService.saveJwt(token);
+                    }
+                    return UserService.getUserById(data.uid);
+                })
+                .then(function(data){
+                    AuthService.setUser(data);
+                    //Also save it on the controller
+                    userVm.user = data;
                     $window.location.href = '#/user/profile';
-                    UserService.logonStatus = true;
-                }, function (error) {
+                })
+                .catch( function (error) {
                     console.log(error);
                 });
         }
@@ -45,6 +59,7 @@
                     console.log("Registration Successful!"+data);
                     userVm.statusMessage = "Registration Successful!";
                     userVm.userDetails = data;
+                    $window.location.href = '#/user/login';
                 }, function (error) {
                     console.log(error);
                 });

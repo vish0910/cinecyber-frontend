@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top nav-bar" ng-controller="RootController">
+<nav class="navbar navbar-default navbar-fixed-top nav-bar" ng-controller="RootController as rootVm">
     <div class="container-fluid">
 
         <ul class="nav nav-pills">
@@ -9,9 +9,10 @@
             </li>
             <li role="presentation" class="nav-li"><a href="#/movie-browse">Movie</a></li>
             <li role="presentation" class="nav-li"><a href="#/movie-admin">Movie-Admin </a></li>
-            <li role="presentation" class="nav-li"><a href="#/user/login">Login</a></li>
-            <li role="presentation" class="nav-li"><a href="#/user/register">Register</a></li>
+            <li ng-show= !rootVm.logonStatus role="presentation" class="nav-li"><a href="#/user/login">Login</a></li>
+            <!--<li role="presentation" class="nav-li"><a href="#/user/register">Register</a></li>-->
             <li role="presentation" class="nav-li"><a href="#/user/profile">Profile</a></li>
+            <li role="presentation" class="nav-li"><a role = "button" ng-click="rootVm.logoutUser()">Logout</a></li>
         </ul>
     </div>
 

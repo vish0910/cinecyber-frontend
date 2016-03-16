@@ -18,7 +18,7 @@
         self.deleteMovie = deleteMovie;
         // Get All Movies
         function getMovies() {
-            return $http.get(CONFIG.API_END_POINT + '/api/movies')
+            return $http.get(CONFIG.API_END_POINT + '/movies')
                 .then(successFn, errorFn);
         }
 
@@ -43,7 +43,7 @@
 
         //Delete a Movie
         function deleteMovie(mid) {
-            return $http.delete(CONFIG.API_END_POINT + 'api/movies/' + mid)
+            return $http.delete(CONFIG.API_END_POINT + '/api/movies/' + mid)
                 .then(successFn, errorFn);
         }
 

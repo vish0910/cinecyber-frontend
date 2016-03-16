@@ -6,19 +6,19 @@
             <h2>User Profile:</h2>
         </div>
         <div class="col-xs-12">
-            UID: <strong>{{userVm.userDetails.uid}}</strong>
+            UID: <strong>{{userVm.user.uid}}</strong>
         </div>
         <div class="col-xs-12 user-profile-details">
             <div class="col-xs-6 user-profile-text">
                 <div class="col-xs-12">Full Name:
-                    <strong>{{user.userDetails.fullname}}</strong></div>
+                    <strong>{{userVm.user.fullname}}</strong></div>
                 <div class="col-xs-12">Email:
-                    <strong>{{user.userDetails.email}}</strong></div>
+                    <strong>{{userVm.user.email}}</strong></div>
 
             </div>
             <div class="col-xs-6">
                 <img class="user-profile-pic img-responsive thumbnail"
-                     ng-src="http://localhost:8000/profile_pics/default/profilealiengreen.jpg">
+                     ng-src="{{userVm.user.profilePic}}">
             </div>
         </div>
     </div>
