@@ -24,6 +24,7 @@
                     browseVm.totalMovies = browseVm.movies.length;
                     console.log(browseVm.movies);
                 }, function (error) {
+                    console.log("Error Function of getMovie() in MovieController was accessed");
                     console.log(error);
                 });
         };

@@ -14,8 +14,25 @@
 .admin-movie-table{
     max-height: 93vh;
     overflow-y: auto;
-    border: 1px solid black;
+    border: 1px solid gray;
     font-family: "courier", monospaced;
+    background: white;
+}
+
+/*.list-row:hover{*/
+    /*background: pink;*/
+/*}*/
+
+
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #cccccc;
+}
+
+/*This has to be after the stripe color*/
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #b4d7ff;
+    /*background-color: #9bd2ff;*/
 }
 
 .admin-movie-details{

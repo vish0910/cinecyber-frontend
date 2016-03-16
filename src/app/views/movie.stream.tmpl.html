@@ -26,8 +26,9 @@
                 <div class="col-xs-12 jumbotron  movie-plot">
                     <h3 class="text-uppercase">Plot</h3>
                     <p>{{streamVm.movie.plot}}</p>
-                    <p>Metascore: <strong>{{streamVm.movie.metascore}}</strong> &nbsp;&nbsp;&nbsp; IMDB: <strong>{{streamVm.movie.imdbRating}}</strong>
-                        ({{streamVm.movie.imdbVotes}} votes)</p>
+                    <p>Metascore: <strong>{{streamVm.movie.metascore}}</strong><small>/100</small> &nbsp;&nbsp;&nbsp; IMDB: <strong>{{streamVm.movie.imdbRating}}</strong><small>/10</small>
+                        ({{streamVm.movie.imdbVotes|number}} votes) &nbsp;&nbsp;&nbsp; CineCyber: <strong>{{streamVm.movie.imdbRating}}</strong>
+                    ({{streamVm.movie.imdbVotes|number}} votes)</p>
                 </div>
             </div>
             <div class="row">

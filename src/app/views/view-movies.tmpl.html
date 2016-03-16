@@ -1,5 +1,5 @@
 <div class = "admin-movie-table">
-<table class="table table-striped table-hover ">
+<table class="table table-hover table-striped">
     <thead>
     <tr>
         <th>Sr. No.</th>
@@ -13,7 +13,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="movie in movieVm.movies" ng-click="movieVm.showDetails($index)">
+    <tr ng-repeat="movie in movieVm.movies" ng-click="movieVm.showDetails($index)" class="list-row">
         <td>{{$index+1}}</td>
         <td><img ng-src="{{movie.poster}}" class = "list-row-thumbnail" ></td>
         <td class = "list-row-title">{{movie.title}}</td>

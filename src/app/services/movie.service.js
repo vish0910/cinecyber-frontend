@@ -18,44 +18,46 @@
         self.deleteMovie = deleteMovie;
         // Get All Movies
         function getMovies() {
-            return $http.get(CONFIG.API_END_POINT + '/movies')
+            return $http.get(CONFIG.API_END_POINT + '/api/movies')
                 .then(successFn, errorFn);
         }
 
         // Get Movie By Id
         function getMovieById(mid) {
             console.log("MovieService: "+ CONFIG.API_END_POINT + '/movies/' + mid);
-            return $http.get(CONFIG.API_END_POINT + '/movies/' + mid)
+            return $http.get(CONFIG.API_END_POINT + '/api/movies/' + mid)
                 .then(successFn, errorFn);
         }
 
-        //Post A Movie
+        //Create A Movie
         function createMovie(movie) {
-            return $http.post(CONFIG.API_END_POINT + '/movies', movie)
+            return $http.post(CONFIG.API_END_POINT + '/api/movies', movie)
                 .then(successFn, errorFn);
         }
 
         //Update a movie
         function updateMovie(mid, data) {
-            return $http.put(CONFIG.API_END_POINT + '/movies/' + mid, movie)
+            return $http.put(CONFIG.API_END_POINT + '/api/movies/' + mid, movie)
                 .then(successFn, errorFn);
         }
 
         //Delete a Movie
         function deleteMovie(mid) {
-            return $http.delete(CONFIG.API_END_POINT + '/movies/' + mid)
+            return $http.delete(CONFIG.API_END_POINT + 'api/movies/' + mid)
                 .then(successFn, errorFn);
         }
 
         //Success and Error Callbacks
 
         function successFn(response) {
+            console.log("SucessFn of Movie Service Accessed");
             return response.data;
         }
 
         function errorFn(errorResponse) {
+            console.log("ErrorFn of Movie Service Accessed");
             console.log(errorResponse.status);
-            $q.reject(errorResponse.status);
+            return $q.reject(errorResponse.status);
         }
 
     }

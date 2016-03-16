@@ -1,0 +1,17 @@
+
+.container{
+    position: relative;
+    /*vertical-align: middle;*/
+}
+#login-div {
+    box-shadow: 0px 0px 5px #337AB7;
+}
+
+
+/* .form-control:focus{
+  border-color: red;
+} */
+
+/* .input-group{
+  text-align: center;
+} */
