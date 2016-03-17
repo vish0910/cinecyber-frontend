@@ -1,15 +1,15 @@
 <uib-accordion close-others="movieVm.oneAtATime">
-    <uib-accordion-group panel-class="panel-primary">
+    <uib-accordion-group panel-class="panel-primary" is-open=movieVm.isAddUpdateMovieOpen>
         <uib-accordion-heading>
-            Create/Update User <i class="pull-right glyphicon"
-                                  ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+            <p ng-click="movieVm.toggleAddUpdateUser()">Create/Update User <i class="pull-right glyphicon"
+                                  ng-class="{'glyphicon-chevron-down': movieVm.isAddUpdateMovieOpen, 'glyphicon-chevron-right': !movieVm.isAddUpdateMovieOpen}"></i> </p>
         </uib-accordion-heading>
         <div class="col-xs-12" ng-include="'app/views/movie-form.tmpl.html'"></div>
     </uib-accordion-group>
-    <uib-accordion-group panel-class="panel-success" is-open=true>
+    <uib-accordion-group panel-class="panel-success" is-open=movieVm.isMovieDetailsOpen>
         <uib-accordion-heading>
-            View Movie Details <i class="pull-right glyphicon"
-                                  ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+            <p>View Movie Details <i class="pull-right glyphicon"
+                                  ng-class="{'glyphicon-chevron-down': movieVm.isMovieDetailsOpen, 'glyphicon-chevron-right': !movieVm.isMovieDetailsOpen}"></i></p>
         </uib-accordion-heading>
         <div class="col-xs-12" ng-include="'app/views/movie-details2.tmpl.html'"></div>
 

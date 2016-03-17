@@ -18,16 +18,17 @@
 <!--</div>-->
 
 <div class="list-group col-xs-10 col-xs-offset-1">
+    <h3 class="comments-header">COMMENTS</h3>
     <div class ="comment-row"
             ng-repeat="comment in streamVm.comments">
         <view-comment comment="comment">No Comments</view-comment>
     </div>
-    <div class="comment-text-container col-xs-12">
+    <div class="comment-text-container col-xs-12 panel">
         <form ng-show=true ng-submit="streamVm.createComment()">
-            <p> Write a Comment</p>
+            <p> Write a Comment...</p>
             <div class="form-group">
-                <textarea ng-model="streamVm.newComment.ucomment" class="col-xs-11"></textarea>
-                <button type = "submit" class="col-xs-1 btn-primary comment-send-button">Send</button>
+                <textarea ng-model="streamVm.newComment.ucomment" class="col-xs-11" rows="3"></textarea>
+                <button type = "submit" class="col-xs-1 btn-primary comment-send-button">COMMENT</button>
             </div>
         </form>
     </div>

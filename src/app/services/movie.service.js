@@ -36,7 +36,7 @@
         }
 
         //Update a movie
-        function updateMovie(mid, data) {
+        function updateMovie(mid, movie) {
             return $http.put(CONFIG.API_END_POINT + '/api/movies/' + mid, movie)
                 .then(successFn, errorFn);
         }
