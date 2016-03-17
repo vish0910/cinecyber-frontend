@@ -12,9 +12,18 @@
                     <!-- <img class="movie-poster img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_SX300.jpg" /> -->
                 </div>
                 <div class="col-xs-12 text-center">
+
+                    <div class="row">
+                        <label for="ccRating" class="col-xs-3 center-block text-uppercase">Rating:</label>
+                        <label for="ccRating"
+                               class="col-xs-2 center-block text-uppercase">{{streamVm.newRating.urating}}/10</label>
+                        <div class="col-xs-6 input-sm"><input type=range id="ccRating" min="1" max="10"
+                                                              ng-model="streamVm.newRating.urating"/></div>
+                    </div>
+
                     <button class="btn btn-warning btn-lg btn-block movie-play-btn">
                         {{streamVm.ccrating.avgRating}}({{streamVm.ccrating.votes}})
-                    </button><
+                    </button>
                     <button type="submit" id="playMovieButton" class="btn btn-primary btn-lg btn-block movie-play-btn">
                         Play Movie
                     </button>

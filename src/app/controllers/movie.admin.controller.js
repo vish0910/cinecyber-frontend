@@ -58,6 +58,8 @@
         movieVm.createMovie = function () {
             // var someDate = new Date(movieVm.newMovie.released);
             // movieVm.newMovie = someDate.getTime();
+            movieVm.newMovie.runtime = movieVm.runtimeFormRange + ' min';
+            movieVm.newMovie.released = movieVm.releasedFormDate;
             console.log(JSON.stringify(movieVm.newMovie));
             if (!movieVm.newMovie.poster) {
                 movieVm.newMovie.poster = 'http://localhost:8000/noposter.jpg';
@@ -80,6 +82,8 @@
 
         //Update a movie
         movieVm.updateMovie = function () {
+            movieVm.newMovie.runtime = movieVm.runtimeFormRange + ' min';
+            movieVm.newMovie.released = movieVm.releasedFormDate;
             MovieService.updateMovie(movieVm.newMovie.mid,movieVm.newMovie)
                 .then(function (data) {
                     //Create a Toast
@@ -121,7 +125,7 @@
             //create date that is displayable
             movieVm.releasedFormDate = new Date(movieVm.movieDetails.released);
             //create runtime that is displayble
-            movieVm.runtimeFormRange = parseInt((movieVm.movieDetails.runtime).substring(0, (movieVm.movieDetails.runtime).length - 3));
+            movieVm.runtimeFormRange = parseInt((movieVm.movieDetails.runtime).substring(0, (movieVm.movieDetails.runtime).length - 4));
             console.log(movieVm.releasedFormDate);
             //open movie updater
             movieVm.isAddUpdateMovieOpen = true;

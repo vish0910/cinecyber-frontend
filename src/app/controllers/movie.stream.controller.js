@@ -4,13 +4,13 @@
         .module("app")
         .controller("MovieStreamController", MovieStreamController)
 
-    MovieStreamController.$inject = ['$routeParams', 'MovieService', 'CommentService', 'AuthService'];
+    MovieStreamController.$inject = ['$routeParams', 'MovieService', 'CommentService', 'AuthService', 'RatingService'];
 
-    function MovieStreamController($routeParams, MovieService, CommentService, AuthService) {
+    function MovieStreamController($routeParams, MovieService, CommentService, AuthService, RatingService) {
         var streamVm = this;
         streamVm.welcome = "Welcome!";
         streamVm.newComment = {ucomment: ''};
-        streamVm.ccrating={ avgRating:0, votes:0};
+        streamVm.ccrating = {avgRating: 0, votes: 0};
 
         //streamVm.comments = [
         //    {
@@ -61,9 +61,10 @@
 
         streamVm.createComment = function () {
             console.log("Comment Accessed!");
+            //add timestamp
+            streamVm.newComment.timestamp = new Date();
             if (AuthService.isAuthed()) {
                 var uid = AuthService.getUserId();
-
                 CommentService.createComment(streamVm.newComment, streamVm.mid, uid)
                     .then(function (data) {
                         streamVm.newComment = null;
@@ -99,14 +100,14 @@
             }
         }
 
-        function calculateAvgRating(){
+        function calculateAvgRating() {
             var sum = 0;
             streamVm.ccrating.votes = streamVm.ratings.length
-            for(var i = 0; i< streamVm.ccrating.votes;i++){
+            for (var i = 0; i < streamVm.ccrating.votes; i++) {
 
-                sum+= streamVm.ratings[i].urating;
+                sum += streamVm.ratings[i].urating;
             }
-            streamVm.ccrating.avgRating = sum/streamVm.ccrating.votes;
+            streamVm.ccrating.avgRating = sum / streamVm.ccrating.votes;
         }
 
 
