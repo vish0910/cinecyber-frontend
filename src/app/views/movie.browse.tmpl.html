@@ -2,40 +2,64 @@
 <div class="backgroundgradient"></div>
 <div class="container-fluid">
     <h1>Hello User!</h1>
-    <div class="form-group list-group col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-        <label for="searchByTitle">Search By Title: </label>
-        <input id="searchByTitle" type="text" ng-model="browseVm.search.title" placeholder="Type search string here"
-               class=""/>
-        <label for="searchByGenre">Search By Genre: </label>
-        <input id="searchByGenre" type="text" ng-model="browseVm.search.genre" placeholder="Type genre here" class=""/>
+    <div class="movie-filter-div container-fluid form-group list-group col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="col-xs-12 text-center text-uppercase"><h2>CineCyber <i class="glyphicon glyphicon-film"></i> & chill <i class="glyphicon glyphicon-glass"></i></h2></div>
+        <div class="col-xs-12 col-sm-6 filter-by-input">
+            <label for="searchByTitle" class="col-xs-2"><i class="glyphicon glyphicon-search"></i></label>
+            <input id="searchByTitle" class="col-xs-10" type="text" ng-model="browseVm.search" placeholder="Type search string here"
+                   class=""/>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <label for="searchByGenre" class="col-xs-2"><i class="glyphicon glyphicon-picture"></i></label>
+            <input id="searchByGenre" class="col-xs-10" type="text" ng-model="browseVm.search.genre" placeholder="Type genre here"/>
+        </div>
+        <p>&nbsp;</p>
         <div class="btn-group btn-group-justified" role="group" aria-label="...">
             <div class="btn-group" role="group">
                 <button type="button"
                         ng-click="browseVm.sort.by = 'title'; browseVm.sort.reverse = !browseVm.sort.reverse;"
-                        class="btn btn-default">By title
+                        class="btn btn-default">By Title
+                    <!--<i class="glyphicon glyphicon-sort-by-alphabet"></i><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i>-->
+                    <i class="glyphicon"
+                       ng-class="{'glyphicon-sort-by-alphabet': !browseVm.sort.reverse, 'glyphicon-sort-by-alphabet-alt': browseVm.sort.reverse}"></i>
                 </button>
             </div>
             <div class="btn-group" role="group">
                 <button type="button"
                         ng-click="browseVm.sort.by = 'imdbRating'; browseVm.sort.reverse = !browseVm.sort.reverse;"
-                        class="btn btn-default">By imdbRating
+                        class="btn btn-default">By IMDB Rating
+                    <i class="glyphicon"
+                       ng-class="{'glyphicon-sort-by-order': !browseVm.sort.reverse, 'glyphicon-sort-by-order-alt': browseVm.sort.reverse}"></i>
+
+                </button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button"
+                        ng-click="browseVm.sort.by = 'imdbVotes'; browseVm.sort.reverse = !browseVm.sort.reverse;"
+                        class="btn btn-default">By IMDB Votes
+                    <i class="glyphicon"
+                       ng-class="{'glyphicon-sort-by-order': !browseVm.sort.reverse, 'glyphicon-sort-by-order-alt': browseVm.sort.reverse}"></i>
+
                 </button>
             </div>
             <div class="btn-group" role="group">
                 <button type="button"
                         ng-click="browseVm.sort.by = 'myear'; browseVm.sort.reverse = !browseVm.sort.reverse;"
-                        class="btn btn-default">By year
+                        class="btn btn-default">By Year
+                    <i class="glyphicon"
+                       ng-class="{'glyphicon-sort-by-order': !browseVm.sort.reverse, 'glyphicon-sort-by-order-alt': browseVm.sort.reverse}"></i>
+
                 </button>
             </div>
         </div>
     </div>
     <br/>
-    <div class="list-group col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <div class="list-group movie-list-div col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
         <button class="list-group-item"
                 ng-repeat="movie in browseVm.movies|filter:browseVm.search:strict|orderBy:browseVm.sort.by:browseVm.sort.reverse|limitTo:10:(browseVm.currentPage-1)*10">
             <view-movie movie="movie">Something</view-movie>
         </button>
-        <div>
+        <div class="text-center">
             <uib-pagination total-items="browseVm.totalMovies" ng-model="browseVm.currentPage"
                             max-size="browseVm.maxSize"
                             ng-change="pageChanged()" boundary-links="true" rotate="false"></uib-pagination>

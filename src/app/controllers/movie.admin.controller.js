@@ -29,7 +29,7 @@
                 .getMovies()
                 .then(function (data) {
                     movieVm.movies = data;
-                    movieVm.showDetails(0);
+                    movieVm.showDetails(movieVm.movies[0]);
                 }, function (error) {
                     console.log(error);
                 });
@@ -37,11 +37,10 @@
 
 
         //shwdetails
-        movieVm.showDetails = function (index) {
-            console.log("Index: " + index);
-            movieVm.movieDisplayed = index;
-            movieVm.movieDetails = movieVm.movies[index];
-            //movieVm.imdbUrl =
+        movieVm.showDetails = function (movie) {
+            //console.log("Index: " + index);
+            //movieVm.movieDisplayed = index;
+            movieVm.movieDetails = movie;
             movieVm.isMovieDetailsOpen = true;
         }
 
@@ -97,7 +96,10 @@
                 .catch(function (error) {
                     console.log("Update Error: " + error);
                 });
-            movieVm.updating = false;
+            //movieVm.updating = false;
+            //movieVm.isMovieDetailsOpen = true;
+            //movieVm.newMovie = null;
+            movieVm.cancelAddUpdate();
         }
 
 
@@ -118,10 +120,10 @@
                 });
         }
 
-        movieVm.editMovie = function (index) {
+        movieVm.editMovie = function (movie) {
             console.log("Edit Movie called");
             movieVm.updating = true;
-            movieVm.newMovie = movieVm.movies[index];
+            movieVm.newMovie = movie;
             //create date that is displayable
             movieVm.releasedFormDate = new Date(movieVm.movieDetails.released);
             //create runtime that is displayble
@@ -136,6 +138,7 @@
             movieVm.releasedFormDate = null;
             movieVm.runtimeFormRange = null;
             movieVm.updating = false;
+            movieVm.isMovieDetailsOpen = true;
         }
 
 

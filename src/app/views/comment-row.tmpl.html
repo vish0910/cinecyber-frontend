@@ -1,11 +1,13 @@
 <div class="row">
-    <div class="col-xs-2">
-        <img ng-src="{{comment.user.profilePic}}" class="center-block img-responsive comments-user-thumbnail" alt="Poster Not found"></div>
+    <div class="col-xs-4 col-sm-2">
+        <img ng-src="{{comment.user.profilePic}}" class="center-block img-responsive comments-user-thumbnail"
+             alt="Poster Not found"></div>
 
-    <div class="col-xs-10 comments-details">
+    <div class="col-xs-8 col-sm-10 comments-details">
         <div class="row">
-            <div class="col-xs-11 comments-username-timestamp"><span class="pull-left">By&nbsp;{{comment.user.email}}</span> <span class="pull-right">On&nbsp;{{comment.timestamp|date:'yyyy MMM dd HH:mm:ss'}}</span></div>
-            <div class="col-xs-11">{{comment.ucomment}}</div>
+            <div class=" col-xs-10 col-xs-11 comments-username-timestamp"><span class="pull-left">By&nbsp;{{comment.user.email}}</span>
+                <span class="pull-right">On&nbsp;{{comment.timestamp|date:'yyyy MMM dd HH:mm:ss'}}</span></div>
+            <div class="col-xs-10 col-xs-11">{{comment.ucomment}}</div>
         </div>
     </div>
 </div>

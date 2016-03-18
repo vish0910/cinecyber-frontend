@@ -1,20 +1,29 @@
 <div class="row">
-    <div class="col-xs-12 col-sm-4 col-md-3">
-        <img ng-src="{{movie.poster}}" class="img-responsive movie-list-poster center-block" alt="Poster Not found">
-    </div>
-
-    <div class="col-xs-12 col-sm-8 col-md-9">
-        <div class="">
-            <h3>{{movie.title}}({{movie.myear}})</h3>
-            <p>{{movie.plot}}</p>
-            <p>
-                <a ng-init="movie.imdbUrl= 'http://www.imdb.com/title/'+ movie.imdbID;" ng-href="{{movie.imdbUrl}}"
-                  role="button" target="_blank">
-                <button ng-click='viewMovieVm.imdbClicked($event,"Clicked IMDB")' class="btn btn-primary" role="button">
-                    IMDB:{{movie.imdbRating}}
-                </button>
-            </a>
-                <a ng-href="#/movies/{{movie.mid}}" class="btn btn-default" role="button">Metascore:{{movie.metascore}}</a></p>
+    <a ng-href="#/movies/{{movie.mid}}" class="stream-link">
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <img ng-src="{{movie.poster}}" class="img-responsive movie-list-poster center-block" alt="Poster Not found">
         </div>
-    </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-9">
+            <div class="">
+                <h3>{{movie.title}}({{movie.myear}})</h3>
+                <p>{{movie.plot}}</p>
+                <p>Genre: {{movie.genre}}</p>
+                <p>
+                    <a ng-init="movie.imdbUrl= 'http://www.imdb.com/title/'+ movie.imdbID;" ng-href="{{movie.imdbUrl}}"
+                       role="button" target="_blank">
+                        <button ng-click='viewMovieVm.imdbClicked($event,"Clicked IMDB")' class="btn btn-primary"
+                                role="button">
+                            <img src="images/imdblogo.jpeg" class="score-logos-2 text-center">&nbsp;{{movie.imdbRating}}
+                            <small>/10&nbsp;({{movie.imdbVotes|number}}&nbsp;votes)</small>
+                        </button>
+                    </a>
+                    <a ng-href="#" class="btn btn-default" role="button"><img src="images/metascore.png"
+                                                                              class="score-logos-1 text-center">&nbsp;{{movie.metascore}}
+                        <small>/100</small>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </a>
 </div>

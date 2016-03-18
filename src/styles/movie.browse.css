@@ -9,7 +9,29 @@
     height: 200px;
 }
 
-.movie-list-details {}
+.movie-list-details {
+}
+
+.movie-filter-div {
+    background: rgba(0,0,0,0.5);
+    color: rgb(150,150,150);
+    text-shadow: 0px 0px 5px black;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+    border: 1px dotted rgb(150,150,150);
+    box-shadow: 0px 0px 5px black;
+}
+
+.filter-by-input{
+    padding: 0px;
+}
+.movie-list-div{
+    background: rgba(0,0,0,0.5);
+    padding-right: 0px;
+}
 
 
 /*---ANGULAR UI BOOTSTRAP--*/
@@ -19,4 +41,9 @@
 .carousel,
 .panel-title a {
     cursor: pointer;
+}
+
+.stream-link, .stream-link:hover, .stream-link:visited {
+    text-decoration: none;
+    color: #555;
 }

@@ -12,7 +12,7 @@
 }
 
 .admin-movie-table{
-    max-height: 90vh;
+    max-height: 87vh;
     overflow-y: auto;
     border: 1px solid gray;
     font-family: "courier", monospaced;
@@ -35,12 +35,19 @@
     /*background-color: #9bd2ff;*/
 }
 
+.admin-movie-form{
+    max-height: 70vh;
+    overflow-y: auto;
+    margin: -15px;
+}
+
 .admin-movie-details{
     max-height: 70vh;
     overflow-y: auto;
     margin: -15px;
     font-family: "courier", monospaced;
 }
+
 
 .admin-movie-details-plot-poster{
     padding:0px;
