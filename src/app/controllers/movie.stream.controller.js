@@ -112,27 +112,7 @@
             }
         }
 
-        //function calculateAvgRating() {
-        //    var sum = 0;
-        //    streamVm.ccrating.votes = streamVm.ratings.length;
-        //    for (var i = 0; i < streamVm.ccrating.votes; i++) {
-        //
-        //        sum += streamVm.ratings[i].urating;
-        //    }
-        //    streamVm.ccrating.avgRating = sum / streamVm.ccrating.votes;
-        //}
-        //
-        //function displayUserRating(uid) {
-        //    streamVm.newRating= { urating: 0};
-        //    streamVm.ccrating.votes = streamVm.ratings.length;
-        //    for (var i = 0; i < streamVm.ccrating.votes; i++) {
-        //        if(streamVm.ratings[i].user.uid == uid){
-        //            streamVm.newRating['urating'] = streamVm.ratings[i].urating;
-        //            break;
-        //        }
-        //    }
-        //}
-
+        //Display User rating and avg
         function displayAvgRatingUser(uid) {
             var sum = 0;
             streamVm.newRating = {urating: 0};
@@ -142,6 +122,7 @@
                 sum += streamVm.ratings[i].urating;
                 if (streamVm.ratings[i].user.uid == uid) {
                     streamVm.newRating['urating'] = streamVm.ratings[i].urating;
+                    streamVm.userRatedTitle = true;
                 }
             }
             streamVm.ccrating.avgRating = sum / streamVm.ccrating.votes;

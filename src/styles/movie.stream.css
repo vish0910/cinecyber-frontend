@@ -147,3 +147,27 @@
     padding-left: 0px;
   }
 }
+
+.score-logos-1{
+  width: 26px;
+  border-radius: 13px;
+}
+
+.score-logos-2{
+  width: 18px;
+  border-radius: 9px;
+}
+
+.score-logos-3{
+  width: 18px;
+  border-radius: 9px;
+}
+
+.glyphicon-star{
+  color: yellow;
+}
+
+.user-rating{
+  color: rgba(180,180,180,1.0);
+  text-shadow: 0px 0px 1px black;
+}

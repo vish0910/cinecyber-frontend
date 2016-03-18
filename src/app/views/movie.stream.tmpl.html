@@ -1,4 +1,4 @@
-<div class="background-image"  back-image="{{streamVm.movie.poster}}" ></div>
+<div class="background-image" back-image="{{streamVm.movie.poster}}"></div>
 <div class="background-gradient"></div>
 <div class="container">
     <div class="row">
@@ -12,18 +12,27 @@
                     <!-- <img class="movie-poster img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_SX300.jpg" /> -->
                 </div>
                 <div class="col-xs-12 text-center">
+                    <div ng-if='!streamVm.userRatedTitle' class="row">
+                        <label class="col-xs-12 center-block text-uppercase text-danger">Rate this title</label>
+                    </div>
+                    <div class="row user-rating">
 
-                    <div class="row">
-                        <label for="ccRating" class="col-xs-3 center-block text-uppercase">Rating:</label>
-                        <label for="ccRating"
-                               class="col-xs-2 center-block text-uppercase">{{streamVm.newRating.urating}}/10</label>
+                        <label for="ccRating" class="col-xs-6 center-block text-uppercase">Your Rating:
+                            <i class="glyphicon glyphicon-star"></i> <strong>{{streamVm.newRating.urating}}</strong>
+                            <small>/10</small>
+                        </label>
+
+
+                        <!--<label for="ccRating"-->
+                        <!--class="col-xs-2 center-block text-uppercase">{{streamVm.newRating.urating}}/10</label>-->
                         <div class="col-xs-6 input-sm"><input type=range id="ccRating" min="1" max="10"
-                                                              ng-model="streamVm.newRating.urating" ng-click="streamVm.ratingChanged()"/></div>
+                                                              ng-model="streamVm.newRating.urating"
+                                                              ng-click="streamVm.ratingChanged()"/></div>
                     </div>
 
-                    <button class="btn btn-warning btn-lg btn-block movie-play-btn">
-                        {{streamVm.ccrating.avgRating}}({{streamVm.ccrating.votes}})
-                    </button>
+                    <!--<button class="btn btn-warning btn-lg btn-block movie-play-btn">-->
+                        <!--{{streamVm.ccrating.avgRating}}({{streamVm.ccrating.votes}})-->
+                    <!--</button>-->
                     <button type="submit" id="playMovieButton" class="btn btn-primary btn-lg btn-block movie-play-btn">
                         Play Movie
                     </button>
@@ -38,9 +47,16 @@
                 <div class="col-xs-12 jumbotron  movie-plot">
                     <h3 class="text-uppercase">Plot</h3>
                     <p>{{streamVm.movie.plot}}</p>
-                    <p>Metascore: <strong>{{streamVm.movie.metascore}}</strong><small>/100</small> &nbsp;&nbsp;&nbsp; IMDB: <strong>{{streamVm.movie.imdbRating}}</strong><small>/10</small>
-                        ({{streamVm.movie.imdbVotes|number}} votes) &nbsp;&nbsp;&nbsp; CineCyber: <strong>{{streamVm.movie.imdbRating}}</strong>
-                    ({{streamVm.movie.imdbVotes|number}} votes)</p>
+                    <p><img src="images/metascore.png" class="score-logos-1 text-center"><strong>{{streamVm.movie.metascore}}</strong>
+                        <small>/100</small>
+                        &nbsp;&nbsp;&nbsp; <img src="images/imdblogo.jpeg" class="score-logos-2 text-center"> <strong>{{streamVm.movie.imdbRating}}</strong>
+                        <small>/10</small>
+                        ({{streamVm.movie.imdbVotes|number}} votes) &nbsp;&nbsp;&nbsp; <img src="images/cinecyber.png"
+                                                                                            class="score-logos-3 text-center">
+                        <strong>{{streamVm.ccrating.avgRating}}</strong>
+                        <small>/10</small>
+                        ({{streamVm.ccrating.votes|number}} votes)
+                    </p>
                 </div>
             </div>
             <div class="row">
