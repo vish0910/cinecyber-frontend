@@ -4,13 +4,14 @@
         .module("app")
         .controller("MovieStreamController", MovieStreamController)
 
-    MovieStreamController.$inject = ['$routeParams', 'MovieService', 'CommentService', 'AuthService', 'RatingService'];
+    MovieStreamController.$inject = ['$routeParams', '$window', 'MovieService', 'CommentService', 'AuthService', 'RatingService'];
 
-    function MovieStreamController($routeParams, MovieService, CommentService, AuthService, RatingService) {
+    function MovieStreamController($routeParams, $window, MovieService, CommentService, AuthService, RatingService) {
         var streamVm = this;
         streamVm.welcome = "Welcome!";
         streamVm.newComment = {ucomment: ''};
         streamVm.ccrating = {avgRating: 0, votes: 0};
+        //streamVm.newRating= { urating: 0};
 
         //streamVm.comments = [
         //    {
@@ -35,6 +36,7 @@
         function init() {
             console.log($routeParams);
             streamVm.mid = $routeParams.mid;
+
             MovieService
                 .getMovieById($routeParams.mid)
                 .then(function (data) {
@@ -45,15 +47,18 @@
                 .then(function (data) {
                     streamVm.comments = data;
                     console.log(data);
-                    return RatingService.getRatingsByMid(stream.mid);
+                    return RatingService.getRatingsByMid(streamVm.mid);
                 })
                 .then(function (data) {
                     streamVm.ratings = data;
-                    calculateAvgRating();
+                    displayAvgRatingUser(AuthService.getUserId());
+                    //calculateAvgRating();
+                    //displayUserRating(AuthService.getUserId());
                     console.log(data);
                 })
                 .catch(function (error) {
-                    console.log(error);
+                    $window.location.href = '#/user/login';
+                    console.log("catch in stream init called:" + error);
                 });
         };
 
@@ -77,6 +82,9 @@
                         console.log(error);
                     });
             }
+            else {
+                $window.location.href = '#/user/login';
+            }
         }
 
         //Create Rating
@@ -87,27 +95,62 @@
 
                 RatingService.createRating(streamVm.newRating, streamVm.mid, uid)
                     .then(function (data) {
-                        streamVm.newRating = null;
-                        return RatingService.getRatingByMid(streamVm.mid);
+                        streamVm.newRating.urating = data.urating;
+                        return RatingService.getRatingsByMid(streamVm.mid);
                     })
                     .then(function (data) {
                         streamVm.ratings = data;
-                        calculateAvgRating();
+                        displayAvgRatingUser(uid);
+                        //displayUserRating(uid);
                     })
                     .catch(function (error) {
                         console.log(error);
                     });
             }
+            else {
+                $window.location.href = '#/user/login';
+            }
         }
 
-        function calculateAvgRating() {
+        //function calculateAvgRating() {
+        //    var sum = 0;
+        //    streamVm.ccrating.votes = streamVm.ratings.length;
+        //    for (var i = 0; i < streamVm.ccrating.votes; i++) {
+        //
+        //        sum += streamVm.ratings[i].urating;
+        //    }
+        //    streamVm.ccrating.avgRating = sum / streamVm.ccrating.votes;
+        //}
+        //
+        //function displayUserRating(uid) {
+        //    streamVm.newRating= { urating: 0};
+        //    streamVm.ccrating.votes = streamVm.ratings.length;
+        //    for (var i = 0; i < streamVm.ccrating.votes; i++) {
+        //        if(streamVm.ratings[i].user.uid == uid){
+        //            streamVm.newRating['urating'] = streamVm.ratings[i].urating;
+        //            break;
+        //        }
+        //    }
+        //}
+
+        function displayAvgRatingUser(uid) {
             var sum = 0;
-            streamVm.ccrating.votes = streamVm.ratings.length
+            streamVm.newRating = {urating: 0};
+            streamVm.ccrating.votes = streamVm.ratings.length;
             for (var i = 0; i < streamVm.ccrating.votes; i++) {
 
                 sum += streamVm.ratings[i].urating;
+                if (streamVm.ratings[i].user.uid == uid) {
+                    streamVm.newRating['urating'] = streamVm.ratings[i].urating;
+                }
             }
             streamVm.ccrating.avgRating = sum / streamVm.ccrating.votes;
+        }
+
+        streamVm.ratingChanged = function () {
+            console.log("Slider manipulated");
+            streamVm.createRating();
+
         }
 
 

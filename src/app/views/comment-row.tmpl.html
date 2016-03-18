@@ -4,8 +4,8 @@
 
     <div class="col-xs-10 comments-details">
         <div class="row">
-            <div class="col-xs-10 comments-username-timestamp">By&nbsp;{{comment.user.email}}&nbsp;on&nbsp;{{comment.timestamp|date:'yyyy MMM dd HH:mm:ss'}}</div>
-            <div class="col-xs-10">{{comment.ucomment}}</div>
+            <div class="col-xs-11 comments-username-timestamp"><span class="pull-left">By&nbsp;{{comment.user.email}}</span> <span class="pull-right">On&nbsp;{{comment.timestamp|date:'yyyy MMM dd HH:mm:ss'}}</span></div>
+            <div class="col-xs-11">{{comment.ucomment}}</div>
         </div>
     </div>
 </div>

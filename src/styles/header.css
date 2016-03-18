@@ -1,6 +1,6 @@
 
 
-.navbar{
+.cinecyber-navbar{
     /*background: #122b40;*/
     /*border-color: #00cc99;*/
     background: black;
@@ -8,6 +8,18 @@
     box-shadow: 0px 0px 5px black ;
 }
 
-/*.nav-li:hover{*/
-    /*background: blue;*/
-/*}*/
+
+.navbar-thumbnail{
+    width: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px white;
+}
+
+.nav-pills > li > a{
+    border-radius: 0px;
+}
+
+.nav-pills > li > a:hover{
+    color: darkred;
+    background:transparent;
+}

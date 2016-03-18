@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top nav-bar" ng-controller="RootController as rootVm">
+<nav class="cinecyber-navbar navbar-default navbar-fixed-top nav-bar" ng-controller="RootController as rootVm">
     <div class="container-fluid">
 
         <ul class="nav nav-pills">
@@ -7,13 +7,18 @@
                     <img alt="Brand" src="images/cinecyberlogo.gif" height="40px">
                 </a>
             </li>
-            <li role="presentation" class="nav-li"><a href="#/movie-browse">Movie</a></li>
-            <li ng-if=adminStatus role="presentation" class="nav-li"><a href="#/movie-admin">Movie-Admin </a></li>
-            <li ng-if=!logonStatus role="presentation" class="nav-li"><a href="#/user/login">Login</a></li>
+            <li class="nav-li"><a href="#/movie-browse"><i class="glyphicon glyphicon-film"></i> &nbsp;MOVIES</a></li>
+            <li ng-if=adminStatus class="nav-li"><a href="#/movie-admin"><i class="glyphicon glyphicon-knight"></i>&nbsp;ADMIN</a></li>
+            <li ng-if=!logonStatus class="nav-li navbar-right"><a href="#/user/login"><i
+                    class="glyphicon glyphicon-log-in"></i>&nbsp;LOGIN</a></li>
             <!--<li role="presentation" class="nav-li"><a href="#/user/register">Register</a></li>-->
-            <li ng-if=logonStatus role="presentation" class="nav-li"><a href="#/user/profile">Profile</a></li>
-            <li ng-if=logonStatus role="presentation" class="nav-li"><a role = "button" ng-click="rootVm.logoutUser()">Logout</a></li>
+            <li ng-if=logonStatus class="nav-li navbar-right"><a role="button" ng-click="rootVm.logoutUser()"><i
+                    class="glyphicon glyphicon-log-out"></i>&nbsp;LOGOUT</a></li>
+            <li ng-if=logonStatus class="navbar-right"><a href="#/user/profile"><i class="glyphicon glyphicon-user"></i>&nbsp;PROFILE</a>
+            </li>
         </ul>
+
+
     </div>
 
 </nav>

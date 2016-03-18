@@ -110,6 +110,7 @@
         function logoutUser(){
             resetUser();
             $window.localStorage.removeItem('jwtToken');
+            $window.location.href = '#/user/login';
         }
     }
 

@@ -1,15 +1,23 @@
-(function(){
+(function () {
     'use strict'
 
     angular
         .module('app')
         .controller('RootController',
-            function ($scope, $route, $routeParams, $location,$window, $rootScope, AuthService,
+            function ($scope, $route, $routeParams, $location, $window, $rootScope, AuthService,
                       UserService) {
                 var rootVm = this;
-                //$scope.user = AuthService.user;
-                //rootVm.user = AuthService.user;
-                //$rootScope.logonStatus = AuthService.logonStatus;
+
+                //init();
+                //
+                //function init(){
+                //    console.log("Initialting RootController");
+                //    rootVm.logonStatus = AuthService.isAuthed();
+                //    if(rootVm.logonStatus){
+                //        rootVm.userProfilePic = AuthService.getUser().profilePic;
+                //    }
+                //}
+
                 console.log("Root Controller called");
                 $rootScope.$on('$routeChangeStart', function (e, next, current) {
                     if (next.access != undefined && !next.access.allowAnonymous && !AuthService.isAuthed()) {
@@ -20,7 +28,7 @@
                         $window.location.href = '#/user/login';
 
                     }
-                    else if (next.access != undefined && !next.access.allowUser  && !AuthService.isAdmin() && AuthService.isAuthed()) {
+                    else if (next.access != undefined && !next.access.allowUser && !AuthService.isAdmin() && AuthService.isAuthed()) {
                         console.log("Route change start : error You are not Admin!");
 
                         //$location.path("#/user/profile");
@@ -30,9 +38,9 @@
 
                 rootVm.logoutUser = function () {
                     AuthService.logoutUser();
-                        //.success(function (response) {
-                        //    AuthService.resetUser();
-                        //});
+                    //.success(function (response) {
+                    //    AuthService.resetUser();
+                    //});
                     $location.path("#/user/login");
                     //$window.location.href = '#/user/profile';
                 };
@@ -53,14 +61,16 @@
                     }
                 });
 
-                //rootVm.isAuthed = function () {
-                //    var result = AuthService.isAuthed();
-                //    console.log("IsAuther in root called"+result);
-                //    return result
-                //};
 
-
-
+                rootVm.userProfilePic = function () {
+                    console.log("Get image called");
+                    return AuthService.getUser().profilePic;
+                }
+                rootVm.logonStatus = function () {
+                    console.log("Logon status check called");
+                    $rootScope.logonStatus = AuthService.isAuthed();
+                    return $rootScope.logonStatus
+                }
 
             });
 })();

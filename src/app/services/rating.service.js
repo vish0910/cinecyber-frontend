@@ -36,7 +36,8 @@
 
         //Create A Rating
         function createRating(rating, mid, uid) {
-            return $http.post(CONFIG.API_END_POINT + '/ratings?mid='+mid+'&uid='+uid, rating)
+            console.log("Create Rating called in service");
+            return $http.put(CONFIG.API_END_POINT + '/ratings?mid='+mid+'&uid='+uid, rating)
                 .then(successFn, errorFn);
         }
 
