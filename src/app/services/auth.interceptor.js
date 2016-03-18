@@ -50,9 +50,9 @@
 
             responseError: function (response) {
                 // do stuff or
-                console.log("Hi resonseerror");
+                console.log("Hi resonse error in interceptor");
                 console.log(response);
-                if (response.status === -1) {
+                if (response.status === 401) {
                     console.log("HELLO 401");
                 }
 

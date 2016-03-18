@@ -71,7 +71,7 @@
 
         function errorFn(errorResponse) {
             console.log("error occured:" + errorResponse.data);
-            $q.reject(errorResponse.status);
+            return $q.reject(errorResponse.status);
         }
 
     }

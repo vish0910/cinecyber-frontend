@@ -6,7 +6,7 @@
     UserController.$inject= ['$window','UserService', 'AuthService'];
     function UserController($window,UserService, AuthService) {
         var userVm = this;
-
+        userVm.message = '';
         userVm.user = AuthService.user;
 
         userVm.createUser = createUser;
@@ -39,7 +39,9 @@
                     $window.location.href = '#/user/profile';
                 })
                 .catch( function (error) {
-                    console.log(error);
+                    console.log("Catch in User controller LoginUser(): "+ error);
+                    //console.log(error);
+                    userVm.message = 'Invalid Credentials. Try Again, or...';
                 });
         }
 
@@ -62,7 +64,7 @@
                     userVm.newUser=null;
                     $window.location.href = '#/user/login';
                 }, function (error) {
-                    userVm.message = "User Account already exists!";
+                    userVm.message = "User Account already exists! ";
                     console.log(error);
                 });
         }

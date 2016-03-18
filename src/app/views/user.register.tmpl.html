@@ -9,30 +9,30 @@
                 <p class="text-uppercase">Sign up</p>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" id="inputFullname" placeholder="Full Name" ng-model = "userVm.newUser.fullname">
+                        <input type="text" class="form-control" id="inputFullname" placeholder="Full Name" ng-model = "userVm.newUser.fullname" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Email" ng-model="userVm.newUser.email">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Email" ng-model="userVm.newUser.email" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model = "userVm.newUser.userpassword">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model = "userVm.newUser.userpassword" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
                         <input type="password" class="form-control" id="inputVerifyPassword"
-                               placeholder="Verify Password" ng-model = "userVm.newUser.userpassword">
+                               placeholder="Verify Password" ng-model = "userVm.newUser.userpassword" required>
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-lg btn-primary btn-block btn-submit">SIGN UP</button>
+                <button type="submit" class="btn btn-lg btn-success btn-block btn-submit">SIGN UP</button>
             </form>
-            <a href="#/user/login" class="login">Login </a>
-            <label ng-model = "userVm.message"></label>
+            <label ng-if="userVm.message" class="invalid-credentials-message text-danger text-uppercase">{{userVm.message}}&nbsp;</label>
+            <a href="#/user/login" class="text-uppercase">Login </a>
         </div>
     </div>
 </div>

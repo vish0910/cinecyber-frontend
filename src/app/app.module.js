@@ -48,7 +48,7 @@
                 access: {allowAnonymous:false, allowUser:true}
             })
             .otherwise({
-                redirectTo: '/user/login',
+                redirectTo: '/movie-browse',
             });
     }
 

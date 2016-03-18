@@ -8,11 +8,11 @@
                 </a>
             </li>
             <li role="presentation" class="nav-li"><a href="#/movie-browse">Movie</a></li>
-            <li role="presentation" class="nav-li"><a href="#/movie-admin">Movie-Admin </a></li>
-            <li ng-show= !rootVm.logonStatus role="presentation" class="nav-li"><a href="#/user/login">Login</a></li>
+            <li ng-if=adminStatus role="presentation" class="nav-li"><a href="#/movie-admin">Movie-Admin </a></li>
+            <li ng-if=!logonStatus role="presentation" class="nav-li"><a href="#/user/login">Login</a></li>
             <!--<li role="presentation" class="nav-li"><a href="#/user/register">Register</a></li>-->
-            <li role="presentation" class="nav-li"><a href="#/user/profile">Profile</a></li>
-            <li role="presentation" class="nav-li"><a role = "button" ng-click="rootVm.logoutUser()">Logout</a></li>
+            <li ng-if=logonStatus role="presentation" class="nav-li"><a href="#/user/profile">Profile</a></li>
+            <li ng-if=logonStatus role="presentation" class="nav-li"><a role = "button" ng-click="rootVm.logoutUser()">Logout</a></li>
         </ul>
     </div>
 

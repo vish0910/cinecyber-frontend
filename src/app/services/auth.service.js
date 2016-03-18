@@ -4,8 +4,8 @@
         .module('app')
         .service('AuthService', AuthService);
 
-    AuthService.$inject = ['$window']
-    function AuthService($window) {
+    AuthService.$inject = ['$window', '$rootScope']
+    function AuthService($window, $rootScope) {
         var self = this;
 
         //self.user = {
@@ -16,7 +16,7 @@
         //};
 
         self.user = 'null';
-        self.logonStatus = false;
+        $rootScope.logonStatus = false;
 
         self.parseJwt = parseJwt;
         self.saveJwt = saveJwt;
@@ -77,7 +77,9 @@
             //self.user.email = self.loggingInAs.email;
             //self.user.profilePic = self.loggingInAs.profilePic;
             self.user = user;
-            self.logonStatus = true;
+            $rootScope.logonStatus = true;
+            $rootScope.adminStatus = isAdmin();
+
         }
 
         //Get user
@@ -100,7 +102,8 @@
             //self.user.email = '';
             //self.user.profilePic = '';
             self.user = null;
-            self.logonStatus = false;
+            $rootScope.logonStatus = false;
+            $rootScope.adminStatus = false;
         }
 
         //Logout user by deleteing the token locally
