@@ -8,11 +8,12 @@
             <div class="">
                 <h3>{{movie.title}}&nbsp;<span ng-if="movie.myear != '0'">({{movie.myear}})</span></h3>
                 <p>{{movie.plot}}</p>
-                <p>Genre: {{movie.genre}}</p>
+                <p>Type: <strong>{{movie.mtype}}</strong></p>
+                <p>Genre: <strong>{{movie.genre}}</strong></p>
                 <p>
                     <a ng-init="movie.imdbUrl= 'http://www.imdb.com/title/'+ movie.imdbID;" ng-href="{{movie.imdbUrl}}"
                        role="button" target="_blank">
-                        <button ng-click='viewMovieVm.imdbClicked($event,"Clicked IMDB")' class="btn btn-primary"
+                        <button ng-click='viewMovieVm.imdbClicked($event,"Clicked IMDB")' class="btn btn-success"
                                 role="button">
                             <img src="images/imdblogo.jpeg" class="score-logos-2 text-center">&nbsp;{{movie.imdbRating}}
                             <small>/10&nbsp;({{movie.imdbVotes|number}}&nbsp;votes)</small>
