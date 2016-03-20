@@ -24,7 +24,7 @@
         }
 
         function loginUser(user) {
-            console.log("Login in as:" + user);
+            //console.log("Login in as:" + user);
             self.loggingInAs = user;
             return $http.post(CONFIG.API_END_POINT + '/users/login', user)
                 .then(successLogonFn, errorFn);
@@ -51,11 +51,11 @@
         }
 
         function successLogonFn(response) {
-            console.log("Accessed Service SuccessLogonFn:" + JSON.stringify(response));
+            //console.log("Accessed Service SuccessLogonFn:" + JSON.stringify(response));
 
             var token = response.data.token;
             if (token) {
-                console.log('JWT:', token);
+                //console.log('JWT:', token);
                 AuthService.saveJwt(token);
                 self.loggingInAs =
                     AuthService.setUser(self.loggingInAs);
@@ -65,12 +65,12 @@
         }
 
         function successFn(response) {
-            console.log("Accessed Service SuccessFn:" + JSON.stringify(response));
+            //console.log("Accessed Service SuccessFn:" + JSON.stringify(response));
             return response.data;
         }
 
         function errorFn(errorResponse) {
-            console.log("error occured:" + errorResponse.data);
+            //console.log("error occured:" + errorResponse.data);
             return $q.reject(errorResponse.status);
         }
 

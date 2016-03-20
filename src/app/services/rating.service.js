@@ -36,7 +36,7 @@
 
         //Create A Rating
         function createRating(rating, mid, uid) {
-            console.log("Create Rating called in service");
+            //console.log("Create Rating called in service");
             return $http.put(CONFIG.API_END_POINT + '/api/ratings?mid=' + mid + '&uid=' + uid, rating)
                 .then(successFn, errorFn);
         }
@@ -51,13 +51,13 @@
         //Success and Error Callbacks
 
         function successFn(response) {
-            console.log("SuccessFn of Rating Service Accessed");
+            //console.log("SuccessFn of Rating Service Accessed");
             return response.data;
         }
 
         function errorFn(errorResponse) {
-            console.log("ErrorFn of Rating Service Accessed");
-            console.log(errorResponse.status);
+            //console.log("ErrorFn of Rating Service Accessed");
+            //console.log(errorResponse.status);
             return $q.reject(errorResponse.status);
         }
 

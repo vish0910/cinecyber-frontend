@@ -16,11 +16,6 @@
 
         movieVm.oneAtATime = true;
 
-        //movieVm.status = {
-        //    isFirstOpen: true,
-        //    isFirstDisabled: false
-        //};
-
 
         init();
 
@@ -36,7 +31,7 @@
         }
 
 
-        //shwdetails
+        //show details
         movieVm.showDetails = function (movie) {
             //console.log("Index: " + index);
             //movieVm.movieDisplayed = index;
@@ -46,7 +41,7 @@
 
         //Submit Button
         movieVm.submitMovie = function (isValid) {
-            console.log("Is Valid:"+isValid);
+            console.log("Is Valid:" + isValid);
             if (isValid) {
                 if (!movieVm.updating) {
                     movieVm.createMovie();
@@ -58,8 +53,6 @@
 
         //Create a new movie
         movieVm.createMovie = function () {
-            // var someDate = new Date(movieVm.newMovie.released);
-            // movieVm.newMovie = someDate.getTime();
             movieVm.newMovie.runtime = movieVm.runtimeFormRange + ' min';
             movieVm.newMovie.released = movieVm.releasedFormDate;
             console.log(JSON.stringify(movieVm.newMovie));
@@ -68,8 +61,6 @@
             }
             MovieService.createMovie(movieVm.newMovie)
                 .then(function (data) {
-                    //Create a Toast
-                    console.log("Create" + data);
                     movieVm.newMovie = null;
                     return MovieService.getMovies();
                 })
@@ -88,8 +79,6 @@
             movieVm.newMovie.released = movieVm.releasedFormDate;
             MovieService.updateMovie(movieVm.newMovie.mid, movieVm.newMovie)
                 .then(function (data) {
-                    //Create a Toast
-                    console.log("Updated" + data);
                     movieVm.updating = false;
                     return MovieService.getMovies();
                 })
@@ -99,9 +88,6 @@
                 .catch(function (error) {
                     console.log("Update Error: " + error);
                 });
-            //movieVm.updating = false;
-            //movieVm.isMovieDetailsOpen = true;
-            //movieVm.newMovie = null;
             movieVm.cancelAddUpdate();
         }
 
@@ -110,8 +96,6 @@
             console.log("Delete Movie called");
             MovieService.deleteMovie(mid)
                 .then(function (data) {
-                    //Create a toast
-                    console.log("Deleted");
                     return MovieService.getMovies();
                 })
                 .then(function (data) {
@@ -136,6 +120,7 @@
             movieVm.isAddUpdateMovieOpen = true;
         }
 
+        //Cancel Button is clicked.
         movieVm.cancelAddUpdate = function () {
             movieVm.newMovie = null;
             movieVm.releasedFormDate = null;
@@ -143,7 +128,6 @@
             movieVm.updating = false;
             movieVm.isMovieDetailsOpen = true;
         }
-
 
     }
 })();

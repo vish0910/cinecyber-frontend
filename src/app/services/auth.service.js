@@ -31,9 +31,9 @@
 
         //Parse Jwt
         function parseJwt(token) {
-            console.log("Token is:" + token);
+            //console.log("Token is:" + token);
             var tokenWithoutBearer = token.substring(7);
-            console.log("Sub Token is:" + tokenWithoutBearer);
+            //console.log("Sub Token is:" + tokenWithoutBearer);
             var base64Url = tokenWithoutBearer.split('.')[1];
             var base64 = base64Url.replace('-', '+').replace('_', '/');
             return JSON.parse($window.atob(base64));
@@ -88,14 +88,13 @@
 
         //Get user
         function getUser() {
-            console.log("Get user from authservice Got Called");
-
+            //console.log("Get user from authservice Got Called");
             return self.user;
         }
 
         //Get user
         function getUserId() {
-            console.log("Get user id from authservice Got Called");
+            //console.log("Get user id from authservice Got Called");
             var params = self.parseJwt(getToken());
             return params['jti'];
         }

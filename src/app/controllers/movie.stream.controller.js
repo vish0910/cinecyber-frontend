@@ -11,26 +11,7 @@
         streamVm.welcome = "Welcome!";
         streamVm.newComment = {ucomment: ''};
         streamVm.ccrating = {avgRating: 0, votes: 0};
-        //streamVm.newRating= { urating: 0};
-
-        //streamVm.comments = [
-        //    {
-        //        ucomment: 'This is a comment with some text.',
-        //        timestamp: 1458114803,
-        //        poster: 'http://localhost:8000/profile_pics/default/profilealiengreen.jpg'
-        //    },
-        //    {
-        //        ucomment: 'This is a comment with some text.And Some more  with some text.And Some more  with some text.',
-        //        timestamp: 1452114803,
-        //        poster: 'http://localhost:8000/profile_pics/default/profilealienred.jpg'
-        //    },
-        //    {
-        //        ucomment: 'And Some more  with some text.',
-        //        timestamp: 1458014403,
-        //        poster: 'http://localhost:8000/profile_pics/default/profilealienblue.jpg'
-        //    }
-        //];
-
+        
         init();
 
         function init() {

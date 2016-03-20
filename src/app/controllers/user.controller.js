@@ -45,11 +45,13 @@
                 });
         }
 
+        //Logout user
         function logoutUser() {
             //auth.logout && auth.logout()
             AuthService.logout();
         }
 
+        //Authenticate user
         function isAuthed() {
             return AuthService.isAuthed ? AuthService.isAuthed() : false
         }

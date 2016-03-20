@@ -25,15 +25,15 @@
         return {
             // automatically attach Authorization header
             request: function (config) {
-                console.log("Request interceptor accesed");
+                //console.log("Request interceptor accesed");
                 var token = $window.localStorage['jwtToken'];
                 if (config.url.indexOf(CONFIG.API_END_POINT) === 0 && token) {
                     config.headers['Access-Control-Allow-Headers'] = 'Authorization';
                     config.headers["Authorization"] = token;
 
-                    console.log("header added in request");
+                    //console.log("header added in request");
                 }
-                console.log(config);
+                //console.log(config);
                 return config;
             },
 
@@ -41,7 +41,7 @@
             response: function (res) {
                 console.log("Response Interceptor accessed");
                 if (res.config.url.indexOf(CONFIG.API_END_POINT) === 0 && res.config.headers.Authorization) {
-                    console.log("Interceptor response:" + JSON.stringify(res));
+                    //console.log("Interceptor response:" + JSON.stringify(res));
                     //console.log("JWT:"+res.config.headers.Authorization)
                     AuthService.saveJwt(res.config.headers.Authorization);
                 }
@@ -49,12 +49,8 @@
             },
 
             responseError: function (response) {
-                // do stuff or
-                console.log("Hi resonse error in interceptor");
-                console.log(response);
-                if (response.status === 401) {
-                    console.log("HELLO 401");
-                }
+                //console.log("Hi response error in interceptor");
+                //console.log(response);
 
                 return $q.reject(response);
             }

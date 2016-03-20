@@ -11,14 +11,14 @@
         init();
 
         function init() {
-            console.log("Profile INit is callled");
+            //console.log("Profile INit is callled");
             profVm.userid = AuthService.getUserId();
             UserService.getUserById(profVm.userid)
                 .then(function (data) {
                     profVm.user = data;
                 })
                 .catch(function (error) {
-                    console.log("Error occered in prof controller");
+                    //console.log("Error occered in prof controller");
                 });
         }
 

@@ -50,13 +50,13 @@
         //Success and Error Callbacks
 
         function successFn(response) {
-            console.log("SucessFn of Comment Service Accessed");
+            //console.log("SucessFn of Comment Service Accessed");
             return response.data;
         }
 
         function errorFn(errorResponse) {
-            console.log("ErrorFn of Comment Service Accessed");
-            console.log(errorResponse.status);
+            //console.log("ErrorFn of Comment Service Accessed");
+            //console.log(errorResponse.status);
             return $q.reject(errorResponse.status);
         }
 

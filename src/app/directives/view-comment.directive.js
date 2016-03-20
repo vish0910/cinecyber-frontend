@@ -12,9 +12,9 @@
             },
             templateUrl: 'app/views/comment-row.tmpl.html',
             link: function (scope, elem, attr) {
-                console.log(scope);
-                console.log(elem);
-                console.log(attr);
+                //console.log(scope);
+                //console.log(elem);
+                //console.log(attr);
                 //elem.bind('mouseenter', function () {
                 //    console.log("MouseEnter");
                 //    elem.children().addClass("comment-row-hover");

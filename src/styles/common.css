@@ -18,8 +18,8 @@ body {
     /*background-image: url("http://ia.media-imdb.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg");*/
     /*display: block;*/
     background-size: cover;
-    /*filter: blur(5px);
-    -webkit-filter: blur(5px);*/
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
     /* left: 0; */
     /* top: -50; */
     position: fixed;
