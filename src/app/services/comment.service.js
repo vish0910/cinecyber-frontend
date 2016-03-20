@@ -18,25 +18,25 @@
         self.deleteComment = deleteComment;
         // Get Comments by Mid
         function getCommentsByMid(mid) {
-            return $http.get(CONFIG.API_END_POINT + '/comments?mid='+mid)
+            return $http.get(CONFIG.API_END_POINT + '/api/comments?mid='+mid)
                 .then(successFn, errorFn);
         }
 
         // Get Comments by Uid
         function getCommentsByUid(uid) {
-            return $http.get(CONFIG.API_END_POINT + '/comments?uid='+uid)
+            return $http.get(CONFIG.API_END_POINT + '/api/comments?uid='+uid)
                 .then(successFn, errorFn);
         }
 
         // Get Comments by Cid
         function getCommentByCid(cid) {
-            return $http.get(CONFIG.API_END_POINT + '/comments/'+cid)
+            return $http.get(CONFIG.API_END_POINT + '/api/comments/'+cid)
                 .then(successFn, errorFn);
         }
 
         //Create A Comment
         function createComment(comment, mid, uid) {
-            return $http.post(CONFIG.API_END_POINT + '/comments?mid='+mid+'&uid='+uid, comment)
+            return $http.post(CONFIG.API_END_POINT + '/api/comments?mid='+mid+'&uid='+uid, comment)
                 .then(successFn, errorFn);
         }
 

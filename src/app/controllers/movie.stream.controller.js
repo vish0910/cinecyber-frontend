@@ -64,26 +64,28 @@
 
         console.log("MovieStreamController Initialized");
 
-        streamVm.createComment = function () {
-            console.log("Comment Accessed!");
-            //add timestamp
-            streamVm.newComment.timestamp = new Date();
-            if (AuthService.isAuthed()) {
-                var uid = AuthService.getUserId();
-                CommentService.createComment(streamVm.newComment, streamVm.mid, uid)
-                    .then(function (data) {
-                        streamVm.newComment = null;
-                        return CommentService.getCommentsByMid(streamVm.mid);
-                    })
-                    .then(function (data) {
-                        streamVm.comments = data;
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
-            }
-            else {
-                $window.location.href = '#/user/login';
+        streamVm.createComment = function (isValid) {
+            console.log("Comment Accessed!" + isValid);
+            if (isValid) {
+                //add timestamp
+                streamVm.newComment.timestamp = new Date();
+                if (AuthService.isAuthed()) {
+                    var uid = AuthService.getUserId();
+                    CommentService.createComment(streamVm.newComment, streamVm.mid, uid)
+                        .then(function (data) {
+                            streamVm.newComment = null;
+                            return CommentService.getCommentsByMid(streamVm.mid);
+                        })
+                        .then(function (data) {
+                            streamVm.comments = data;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                else {
+                    $window.location.href = '#/user/login';
+                }
             }
         }
 
