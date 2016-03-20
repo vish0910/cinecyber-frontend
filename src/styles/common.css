@@ -5,17 +5,15 @@ body {
     background: black;
 }
 
-
-
-.template-wrapper{
-    padding-top:10px;
+.template-wrapper {
+    padding-top: 10px;
 }
 
-.headP{
-    color:#122b40;
+.headP {
+    color: #122b40;
 }
 
-.backgroundimage{
+.backgroundimage {
     background-image: url("../images/bg.jpg");
     /*background-image: url("http://ia.media-imdb.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg");*/
     /*display: block;*/
@@ -26,16 +24,16 @@ body {
     /* top: -50; */
     position: fixed;
     right: 0;
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
 }
 
-.backgroundgradient{
+.backgroundgradient {
     background: black;
-    background :  linear-gradient(#2e6da4,rgba(0,0,0,0.9));
+    background: linear-gradient(#2e6da4, rgba(0, 0, 0, 0.9));
     /*background :  linear-gradient(black,rgba(0,0,0,0.9));*/
     min-height: 100%;
     position: fixed;
     left: 0;
-    right:0;
+    right: 0;
 }

@@ -18,26 +18,26 @@
         self.deleteRating = deleteRating;
         // Get Ratings by Mid
         function getRatingsByMid(mid) {
-            return $http.get(CONFIG.API_END_POINT + '/api/ratings?mid='+mid)
+            return $http.get(CONFIG.API_END_POINT + '/api/ratings?mid=' + mid)
                 .then(successFn, errorFn);
         }
 
         // Get Ratings by Uid
         function getRatingsByUid(uid) {
-            return $http.get(CONFIG.API_END_POINT + '/api/ratings?uid='+uid)
+            return $http.get(CONFIG.API_END_POINT + '/api/ratings?uid=' + uid)
                 .then(successFn, errorFn);
         }
 
         // Get Ratings by Cid
         function getRatingByCid(cid) {
-            return $http.get(CONFIG.API_END_POINT + '/api/ratings/'+cid)
+            return $http.get(CONFIG.API_END_POINT + '/api/ratings/' + cid)
                 .then(successFn, errorFn);
         }
 
         //Create A Rating
         function createRating(rating, mid, uid) {
             console.log("Create Rating called in service");
-            return $http.put(CONFIG.API_END_POINT + '/api/ratings?mid='+mid+'&uid='+uid, rating)
+            return $http.put(CONFIG.API_END_POINT + '/api/ratings?mid=' + mid + '&uid=' + uid, rating)
                 .then(successFn, errorFn);
         }
 

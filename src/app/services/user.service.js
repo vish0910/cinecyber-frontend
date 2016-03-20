@@ -58,7 +58,7 @@
                 console.log('JWT:', token);
                 AuthService.saveJwt(token);
                 self.loggingInAs =
-                AuthService.setUser(self.loggingInAs);
+                    AuthService.setUser(self.loggingInAs);
             }
 
             return response.data;

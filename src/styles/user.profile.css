@@ -1,25 +1,26 @@
-.profile-panel{
+.profile-panel {
     border: 1px solid black;
     box-shadow: 0px 0px 5px black;
 
-    background: rgba(0,0,0,0.5);
-    color: rgb(150,150,150);
+    background: rgba(0, 0, 0, 0.5);
+    color: rgb(150, 150, 150);
     text-shadow: 0px 0px 5px black;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
     border-radius: 5px;
-    border: 1px dotted rgb(150,150,150);
+    border: 1px dotted rgb(150, 150, 150);
 }
-.user-profile-pic{
+
+.user-profile-pic {
 
     border: 1px solid black;
     box-shadow: 0px 0px 10px #1b6d85;
 
 }
 
-.user-profile-text, .user-profile-text>div{
+.user-profile-text, .user-profile-text > div {
     padding-left: 0px;
     font-size: large;
 }

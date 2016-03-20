@@ -2,21 +2,23 @@
 <div class="backgroundgradient"></div>
 <div class="container-fluid">
     <div class="movie-filter-div container-fluid form-group list-group col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-        <div class="col-xs-12 text-center text-uppercase"><h2><i class="glyphicon glyphicon-fire"></i>&nbsp;CineCyber Top 10</h2></div>
+        <div class="col-xs-12 text-center text-uppercase"><h2><i class="glyphicon glyphicon-fire"></i>&nbsp;CineCyber
+            Top 10</h2></div>
         <form>
-        <div class="form-group row center-block">
-            <div class="radio">
-                <label class="col-xs-3 col-xs-offset-4"><h3>
-                    <input type="radio" id="typeRadios1" ng-model="browseVm.search.mtype" value="movie" ng-init="browseVm.search.mtype='movie'"> Movie</h3>
-                </label>
+            <div class="form-group row center-block">
+                <div class="radio">
+                    <label class="col-xs-3 col-xs-offset-4"><h3>
+                        <input type="radio" id="typeRadios1" ng-model="browseVm.search.mtype" value="movie"
+                               ng-init="browseVm.search.mtype='movie'"> Movie</h3>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="col-xs-3"><h3>
+                        <input type="radio" id="typeRadios2" ng-model="browseVm.search.mtype" value="series">
+                        Series</h3>
+                    </label>
+                </div>
             </div>
-            <div class="radio">
-                <label class="col-xs-3"><h3>
-                    <input type="radio" id="typeRadios2" ng-model="browseVm.search.mtype" value="series">
-                    Series</h3>
-                </label>
-            </div>
-        </div>
         </form>
     </div>
 

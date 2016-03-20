@@ -24,16 +24,16 @@
         self.isAuthed = isAuthed;
         self.isAdmin = isAdmin;
         self.logoutUser = logoutUser;
-        self.setUser= setUser;
-        self.getUser= getUser;
-        self.getUserId= getUserId;
-        self.resetUser= resetUser;
+        self.setUser = setUser;
+        self.getUser = getUser;
+        self.getUserId = getUserId;
+        self.resetUser = resetUser;
 
         //Parse Jwt
         function parseJwt(token) {
-            console.log("Token is:"+ token);
+            console.log("Token is:" + token);
             var tokenWithoutBearer = token.substring(7);
-            console.log("Sub Token is:"+ tokenWithoutBearer);
+            console.log("Sub Token is:" + tokenWithoutBearer);
             var base64Url = tokenWithoutBearer.split('.')[1];
             var base64 = base64Url.replace('-', '+').replace('_', '/');
             return JSON.parse($window.atob(base64));
@@ -62,20 +62,21 @@
 
         //Check wheater authorized
         function isAdmin() {
-            if(isAuthed()){
-            var token = self.getToken();
-            if (token) {
-                var params = self.parseJwt(token);
-                return params['sub'] == 'admin' ? true : false;
+            if (isAuthed()) {
+                var token = self.getToken();
+                if (token) {
+                    var params = self.parseJwt(token);
+                    return params['sub'] == 'admin' ? true : false;
+                } else {
+                    return false;
+                }
             } else {
-                return false;
-            }}else{
                 return false;
             }
         }
 
         //Sets user data
-        function setUser(user){
+        function setUser(user) {
             //self.user.fullname = self.loggingInAs.fullname;
             //self.user.email = self.loggingInAs.email;
             //self.user.profilePic = self.loggingInAs.profilePic;
@@ -86,21 +87,21 @@
         }
 
         //Get user
-        function getUser(){
+        function getUser() {
             console.log("Get user from authservice Got Called");
 
             return self.user;
         }
 
         //Get user
-        function getUserId(){
+        function getUserId() {
             console.log("Get user id from authservice Got Called");
             var params = self.parseJwt(getToken());
             return params['jti'];
         }
 
         //Resets user data
-        function resetUser(){
+        function resetUser() {
             //self.user.fullname = '';
             //self.user.email = '';
             //self.user.profilePic = '';
@@ -110,7 +111,7 @@
         }
 
         //Logout user by deleteing the token locally
-        function logoutUser(){
+        function logoutUser() {
             resetUser();
             $window.localStorage.removeItem('jwtToken');
             $window.location.href = '#/user/login';

@@ -24,7 +24,7 @@
 
         // Get Movie By Id
         function getMovieById(mid) {
-            console.log("MovieService: "+ CONFIG.API_END_POINT + '/movies/' + mid);
+            console.log("MovieService: " + CONFIG.API_END_POINT + '/movies/' + mid);
             return $http.get(CONFIG.API_END_POINT + '/api/movies/' + mid)
                 .then(successFn, errorFn);
         }

@@ -31,9 +31,10 @@
                     </div>
 
                     <!--<button class="btn btn-warning btn-lg btn-block movie-play-btn">-->
-                        <!--{{streamVm.ccrating.avgRating}}({{streamVm.ccrating.votes}})-->
+                    <!--{{streamVm.ccrating.avgRating}}({{streamVm.ccrating.votes}})-->
                     <!--</button>-->
-                    <button type="submit" id="playMovieButton" class="btn btn-primary btn-lg btn-block movie-play-btn text-uppercase">
+                    <button type="submit" id="playMovieButton"
+                            class="btn btn-primary btn-lg btn-block movie-play-btn text-uppercase">
                         <i class="glyphicon glyphicon-play"></i>Play Movie
                     </button>
                 </div>
@@ -41,13 +42,15 @@
         </div>
         <div class="col-xs-12 col-sm-8">
             <span></span>
-            <h2 class="text-uppercase movie-title">{{streamVm.movie.title}}&nbsp;<span class="movie-year" ng-if="streamVm.movie.myear != '0'">({{streamVm.movie.myear}})</span>
+            <h2 class="text-uppercase movie-title">{{streamVm.movie.title}}&nbsp;<span class="movie-year"
+                                                                                       ng-if="streamVm.movie.myear != '0'">({{streamVm.movie.myear}})</span>
             </h2>
             <div class="row">
                 <div class="col-xs-12 jumbotron  movie-plot">
                     <h3 class="text-uppercase">Plot</h3>
                     <p>{{streamVm.movie.plot}}</p>
-                    <p><span ng-if="streamVm.movie.metascore != '0'"><img src="images/metascore.png" class="score-logos-1 text-center"><strong>{{streamVm.movie.metascore}}</strong>
+                    <p><span ng-if="streamVm.movie.metascore != '0'"><img src="images/metascore.png"
+                                                                          class="score-logos-1 text-center"><strong>{{streamVm.movie.metascore}}</strong>
                         <small>/100</small></span>
                         &nbsp;&nbsp;&nbsp; <img src="images/imdblogo.jpeg" class="score-logos-2 text-center"> <strong>{{streamVm.movie.imdbRating}}</strong>
                         <small>/10</small>

@@ -1,29 +1,30 @@
-<div class = "admin-movie-table">
-<table class="table table-hover table-striped">
-    <thead>
-    <tr>
-        <th>Sr. No.</th>
-        <th>Thumbnail</th>
-        <th ng-click="movieVm.sort.by = 'title'; movieVm.sort.reverse = !movieVm.sort.reverse;">Title</th>
-        <th ng-click="movieVm.sort.by = 'myear'; movieVm.sort.reverse = !movieVm.sort.reverse;">Year</th>
-        <th ng-click="movieVm.sort.by = 'mtype'; movieVm.sort.reverse = !movieVm.sort.reverse;">Type</th>
-        <th ng-click="movieVm.sort.by = 'rated'; movieVm.sort.reverse = !movieVm.sort.reverse;">Rated</th>
-        <th ng-click="movieVm.sort.by = 'imdbRating'; movieVm.sort.reverse = !movieVm.sort.reverse;">IMDB</th>
-        <th ng-click="movieVm.sort.by = 'released'; movieVm.sort.reverse = !movieVm.sort.reverse;">Released</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="movie in movieVm.movies|orderBy:movieVm.sort.by:movieVm.sort.reverse" ng-click="movieVm.showDetails(movie)" class="list-row">
-        <td>{{$index+1}}</td>
-        <td><img ng-src="{{movie.poster}}" class = "list-row-thumbnail" ></td>
-        <td class = "list-row-title">{{movie.title}}</td>
-        <td>{{movie.myear}}</td>
-        <td>{{movie.mtype}}</td>
-        <td>{{movie.rated}}</td>
-        <td>{{movie.imdbRating}}</td>
-        <td>{{movie.released | date}}</td>
+<div class="admin-movie-table">
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th>Sr. No.</th>
+            <th>Thumbnail</th>
+            <th ng-click="movieVm.sort.by = 'title'; movieVm.sort.reverse = !movieVm.sort.reverse;">Title</th>
+            <th ng-click="movieVm.sort.by = 'myear'; movieVm.sort.reverse = !movieVm.sort.reverse;">Year</th>
+            <th ng-click="movieVm.sort.by = 'mtype'; movieVm.sort.reverse = !movieVm.sort.reverse;">Type</th>
+            <th ng-click="movieVm.sort.by = 'rated'; movieVm.sort.reverse = !movieVm.sort.reverse;">Rated</th>
+            <th ng-click="movieVm.sort.by = 'imdbRating'; movieVm.sort.reverse = !movieVm.sort.reverse;">IMDB</th>
+            <th ng-click="movieVm.sort.by = 'released'; movieVm.sort.reverse = !movieVm.sort.reverse;">Released</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="movie in movieVm.movies|orderBy:movieVm.sort.by:movieVm.sort.reverse"
+            ng-click="movieVm.showDetails(movie)" class="list-row">
+            <td>{{$index+1}}</td>
+            <td><img ng-src="{{movie.poster}}" class="list-row-thumbnail"></td>
+            <td class="list-row-title">{{movie.title}}</td>
+            <td>{{movie.myear}}</td>
+            <td>{{movie.mtype}}</td>
+            <td>{{movie.rated}}</td>
+            <td>{{movie.imdbRating}}</td>
+            <td>{{movie.released | date}}</td>
 
-    </tr>
-    </tbody>
-</table>
+        </tr>
+        </tbody>
+    </table>
 </div>
