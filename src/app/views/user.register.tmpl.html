@@ -5,27 +5,49 @@
     <div class="row">
         <div id="register-div"
              class="jumbotron input-group col-md-4 col-md-offset-4 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-            <form class="form-horizontal" ng-submit= "userVm.createUser()">
+            <form name="registrationForm" class="form-horizontal" ng-submit="userVm.createUser(registrationForm.$valid)" novalidate>
                 <p class="text-uppercase">Sign up</p>
                 <div class="form-group">
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control" id="inputFullname" placeholder="Full Name" ng-model = "userVm.newUser.fullname" required>
+                    <div class="col-xs-12">
+                        <input name="fullname" type="text" class="form-control" id="inputFullname"
+                               placeholder="Full Name" ng-model="userVm.newUser.fullname" required minlength="5">
+                    </div>
+                    <div class="error text-danger col-xs-12" ng-messages="registrationForm.fullname.$error"
+                         ng-if="registrationForm.fullname.$dirty">
+                        <p ng-message="required">Full name is required.</p>
+                        <p ng-message="minlength">Should be atleast 5 characters.</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email"
+                               ng-model="userVm.newUser.email" required>
+                    </div>
+                    <div class="error text-danger col-xs-12" ng-messages="registrationForm.email.$error"
+                         ng-if="registrationForm.email.$dirty">
+                        <p ng-message="required">Email is required.</p>
+                        <p ng-message="email">Valid email is required.</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Email" ng-model="userVm.newUser.email" required>
+                        <input name="userpassword" type="password" class="form-control" id="inputPassword"
+                               placeholder="Password" ng-model="userVm.newUser.userpassword" required minlength="5">
+                    </div>
+                    <div class="error text-danger col-xs-12" ng-messages="registrationForm.userpassword.$error"
+                         ng-if="registrationForm.userpassword.$dirty">
+                        <p ng-message="required">Password is required.</p>
+                        <p ng-message="minlength">Should be atleast 5 characters.</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model = "userVm.newUser.userpassword" required>
+                        <input name="verifypassword" type="password" class="form-control" id="inputVerifyPassword"
+                               placeholder="Verify Password" ng-model="userVm.newUser.verifypassword" required>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <input type="password" class="form-control" id="inputVerifyPassword"
-                               placeholder="Verify Password" ng-model = "userVm.newUser.userpassword" required>
+                    <div class="error text-danger col-xs-12" ng-messages="registrationForm.verifypassword.$error"
+                         ng-if="registrationForm.verifypassword.$dirty">
+                        <p ng-message="required">Password needs to be verified.</p>
                     </div>
                 </div>
 

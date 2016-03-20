@@ -33,6 +33,11 @@
     padding-right: 0px;
 }
 
+.type-listbox{
+    border-radius: 0px;
+    height: 20px;
+}
+
 
 /*---ANGULAR UI BOOTSTRAP--*/
 

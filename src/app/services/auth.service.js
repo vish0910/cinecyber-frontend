@@ -62,11 +62,14 @@
 
         //Check wheater authorized
         function isAdmin() {
+            if(isAuthed()){
             var token = self.getToken();
             if (token) {
                 var params = self.parseJwt(token);
                 return params['sub'] == 'admin' ? true : false;
             } else {
+                return false;
+            }}else{
                 return false;
             }
         }

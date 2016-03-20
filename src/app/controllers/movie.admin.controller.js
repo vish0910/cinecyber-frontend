@@ -45,11 +45,14 @@
         }
 
         //Submit Button
-        movieVm.submitMovie = function () {
-            if (!movieVm.updating) {
-                movieVm.createMovie();
-            } else {
-                movieVm.updateMovie();
+        movieVm.submitMovie = function (isValid) {
+            console.log("Is Valid:"+isValid);
+            if (isValid) {
+                if (!movieVm.updating) {
+                    movieVm.createMovie();
+                } else {
+                    movieVm.updateMovie();
+                }
             }
         }
 
@@ -83,7 +86,7 @@
         movieVm.updateMovie = function () {
             movieVm.newMovie.runtime = movieVm.runtimeFormRange + ' min';
             movieVm.newMovie.released = movieVm.releasedFormDate;
-            MovieService.updateMovie(movieVm.newMovie.mid,movieVm.newMovie)
+            MovieService.updateMovie(movieVm.newMovie.mid, movieVm.newMovie)
                 .then(function (data) {
                     //Create a Toast
                     console.log("Updated" + data);

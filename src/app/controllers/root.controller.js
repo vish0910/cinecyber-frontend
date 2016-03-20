@@ -8,15 +8,13 @@
                       UserService) {
                 var rootVm = this;
 
-                //init();
-                //
-                //function init(){
-                //    console.log("Initialting RootController");
-                //    rootVm.logonStatus = AuthService.isAuthed();
-                //    if(rootVm.logonStatus){
-                //        rootVm.userProfilePic = AuthService.getUser().profilePic;
-                //    }
-                //}
+                init();
+
+                function init(){
+                    console.log("Initialting RootController");
+                    rootVm.logonStatus;
+                    rootVm.adminStatus;
+                }
 
                 console.log("Root Controller called");
                 $rootScope.$on('$routeChangeStart', function (e, next, current) {
@@ -50,12 +48,14 @@
                         if (next.indexOf(i) != -1) {
                             if (!window.routes[i].access.allowAnonymous && !AuthService.isAuthed()) {
                                 console.log("error You are not logged in!");
-                                $location.path("#/user/login");
-                                //$window.location.href = '#/user/profile';
+                                //$location.path("#/user/login");
+                                $window.location.href = '#/user/login';
                             }
                             else if (!window.routes[i].access.allowUser && !AuthService.isAdmin() && AuthService.isAuthed()) {
                                 console.log(" Locatoin change start error You are not Admin!");
-                                $location.path("#/user/profile");
+                                //$location.path("#/user/profile");
+                                $window.location.href = '#/user/profile';
+
                             }
                         }
                     }
@@ -69,7 +69,13 @@
                 rootVm.logonStatus = function () {
                     console.log("Logon status check called");
                     $rootScope.logonStatus = AuthService.isAuthed();
-                    return $rootScope.logonStatus
+                    return $rootScope.logonStatus;
+                }
+
+                rootVm.adminStatus = function () {
+                    console.log("Admin status check called");
+                    $rootScope.adminStatus = AuthService.isAdmin();
+                    return $rootScope.adminStatus;
                 }
 
             });

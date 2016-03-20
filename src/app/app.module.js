@@ -5,7 +5,7 @@
 
 
     angular
-        .module('app', ['ui.bootstrap', 'ngRoute'])
+        .module('app', ['ui.bootstrap', 'ngRoute', 'ngMessages'])
         .config(moduleConfig);
 
     moduleConfig.$inject = ['$routeProvider'];
@@ -46,6 +46,12 @@
                 controller: 'ProfileController',
                 controllerAs: 'userVm',
                 access: {allowAnonymous:false, allowUser:true}
+            })
+            .when('/movie-top10', {
+                templateUrl: '/app/views/top10.tmpl.html',
+                controller: 'MovieBrowseController',
+                controllerAs: 'browseVm',
+                access: {allowAnonymous:true, allowUser:true}
             })
             .otherwise({
                 redirectTo: '/movie-browse',

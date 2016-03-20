@@ -37,6 +37,16 @@
     font-weight: 100;
 }
 
+.error{
+
+}
+.error>p{
+    font-size: x-small;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
 /* .form-control:focus{
   border-color: red;
 } */

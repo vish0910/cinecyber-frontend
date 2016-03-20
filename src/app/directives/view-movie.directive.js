@@ -39,7 +39,7 @@
                 });
                 elem.bind('click', function () {
                     console.log("Click");
-                    elem.children().css("background", "gray");
+                    //elem.children().css("background", "gray");
                 });
             }
         };

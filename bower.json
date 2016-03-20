@@ -21,7 +21,8 @@
     "bootstrap": "^3.3.6",
     "angular-animate": "^1.5.0",
     "angular-bootstrap": "^1.2.4",
-    "angular-route": "^1.5.0"
+    "angular-route": "^1.5.0",
+    "angular-messages": "^1.5.0"
   },
   "overrides": {
     "bootstrap": {
@@ -29,5 +30,8 @@
         "dist/css/bootstrap.css"
       ]
     }
+  },
+  "resolutions": {
+    "angular": "^1.5.0"
   }
 }

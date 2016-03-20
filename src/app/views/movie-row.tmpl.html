@@ -6,7 +6,7 @@
 
         <div class="col-xs-12 col-sm-8 col-md-9">
             <div class="">
-                <h3>{{movie.title}}({{movie.myear}})</h3>
+                <h3>{{movie.title}}&nbsp;<span ng-if="movie.myear != '0'">({{movie.myear}})</span></h3>
                 <p>{{movie.plot}}</p>
                 <p>Genre: {{movie.genre}}</p>
                 <p>
