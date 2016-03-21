@@ -1,7 +1,7 @@
 <div class="backgroundimage"></div>
 <div class="backgroundgradient"></div>
 <div class="container-fluid">
-    <div class="movie-filter-div container-fluid form-group list-group col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <div class="movie-filter-div container-fluid form-group list-group col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
         <div class="col-xs-12 text-center text-uppercase"><h2><i class="glyphicon glyphicon-fire"></i>&nbsp;CineCyber
             Top 10</h2></div>
         <form>
@@ -23,7 +23,7 @@
     </div>
 
     <br/>
-    <div class="list-group movie-list-div col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <div class="list-group movie-list-div col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
         <button class="list-group-item"
                 ng-repeat="movie in browseVm.movies|filter:browseVm.search:strict|orderBy:'imdbRating':true|limitTo:10">
             <view-movie movie="movie">No Movies</view-movie>

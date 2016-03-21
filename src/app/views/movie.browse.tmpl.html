@@ -1,27 +1,27 @@
 <div class="backgroundimage"></div>
 <div class="backgroundgradient"></div>
 <div class="container-fluid">
-    <div class="movie-filter-div container-fluid form-group list-group col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <div class="movie-filter-div container-fluid form-group list-group col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
         <div class="col-xs-12 text-center text-uppercase"><h2>CineCyber <i class="glyphicon glyphicon-film"></i> & chill
             <i class="glyphicon glyphicon-glass"></i></h2></div>
-        <div class="col-xs-12 col-sm-6 filter-by-input">
+        <p>&nbsp;</p>
+        <div class="col-xs-12 col-sm-6 col-md-3 filter-by-input">
             <label for="searchByTitle" class="col-xs-2"><i class="glyphicon glyphicon-search"></i></label>
             <input id="searchByTitle" class="col-xs-10" type="text" ng-model="browseVm.search.title"
-                   placeholder="Type search string here"/>
+                   placeholder="Type search title here"/>
         </div>
-        <div class="col-xs-12 col-sm-6 filter-by-input">
+        <div class="col-xs-12 col-sm-6 col-md-3 filter-by-input">
             <label for="searchByGenre" class="col-xs-2"><i class="glyphicon glyphicon-picture"></i></label>
             <input id="searchByGenre" class="col-xs-10" type="text" ng-model="browseVm.search.genre"
                    placeholder="Type genre here"/>
         </div>
-        <p>&nbsp;</p>
-        <div class="col-xs-12 col-sm-6 filter-by-input">
+        <div class="col-xs-12 col-sm-6 col-md-3 filter-by-input">
             <label for="searchByYear" class="col-xs-2"><i class="glyphicon glyphicon-calendar"></i></label>
             <input id="searchByYear" class="col-xs-10" type="text" ng-model="browseVm.search.myear"
                    placeholder="Type year here"
                    class=""/>
         </div>
-        <div class="col-xs-12 col-sm-6 filter-by-input">
+        <div class="col-xs-12 col-sm-6 col-md-3 filter-by-input">
             <label for="searchByType" class="col-xs-2"><i class="glyphicon glyphicon-film"></i></label>
             <input id="searchByType" class="col-xs-10" type="text" ng-model="browseVm.search.mtype"
                    placeholder="Type type here"/>
@@ -70,7 +70,7 @@
         </div>
     </div>
     <br/>
-    <div class="list-group movie-list-div col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <div class="list-group movie-list-div col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
         <button class="list-group-item"
                 ng-repeat="movie in browseVm.movies|filter:browseVm.search:strict|orderBy:browseVm.sort.by:browseVm.sort.reverse|orderBy:browseVm.sort.by1:browseVm.sort.reverse1|limitTo:10:(browseVm.currentPage-1)*10">
             <view-movie movie="movie">Something</view-movie>
