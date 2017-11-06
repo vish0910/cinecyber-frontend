@@ -60,7 +60,7 @@
             </div>
             <div class="btn-group" role="group">
                 <button type="button"
-                        ng-click="browseVm.sort.by1 = 'myear'; browseVm.sort.reverse1 = !browseVm.sort.reverse1;"
+                        ng-click="browseVm.sort.by = 'myear'; browseVm.sort.reverse = !browseVm.sort.reverse;"
                         class="btn btn-default">By Year
                     <i class="glyphicon"
                        ng-class="{'glyphicon-sort-by-order': !browseVm.sort.reverse1, 'glyphicon-sort-by-order-alt': browseVm.sort.reverse1}"></i>
@@ -72,7 +72,7 @@
     <br/>
     <div class="list-group movie-list-div col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
         <button class="list-group-item"
-                ng-repeat="movie in browseVm.movies|filter:browseVm.search:strict|orderBy:browseVm.sort.by:browseVm.sort.reverse|orderBy:browseVm.sort.by1:browseVm.sort.reverse1|limitTo:10:(browseVm.currentPage-1)*10">
+                ng-repeat="movie in browseVm.movies|filter:browseVm.search:strict|orderBy:browseVm.sort.by:browseVm.sort.reverse|limitTo:10:(browseVm.currentPage-1)*10">
             <view-movie movie="movie">Something</view-movie>
         </button>
         <div class="text-center">

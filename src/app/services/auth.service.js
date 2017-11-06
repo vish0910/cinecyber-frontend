@@ -31,12 +31,14 @@
 
         //Parse Jwt
         function parseJwt(token) {
-            //console.log("Token is:" + token);
+            console.log("Token is:" + token);
             var tokenWithoutBearer = token.substring(7);
             //console.log("Sub Token is:" + tokenWithoutBearer);
             var base64Url = tokenWithoutBearer.split('.')[1];
             var base64 = base64Url.replace('-', '+').replace('_', '/');
-            return JSON.parse($window.atob(base64));
+            var res = JSON.parse($window.atob(base64));
+            console.log(res);
+            return res;
         }
 
         //Save Jwt. Save it on local storage on client
